@@ -380,7 +380,39 @@ let data4 = function () {
             break;
     }
 }
-data4();
+//data4();
+
+let data5 = function () {
+    //for döngüsü
+    for (let i = 1; i <= 10; i++) {
+        document.write(" " + i)
+    }
+
+    document.writeln("<br/>" + "")
+
+    //while döngüsü
+    let k = 1;
+    while (k <= 10) {
+        document.write(" " + k)
+        k++;
+        // k=k+1;
+        // k+=1;
+    }
+
+
+    document.writeln("<br/>" + "")
+
+    //do-while döngüsü
+    let m = 1;
+    do {
+        document.write(" " + m)
+        m++;
+    }
+    while (m <= 10);
+
+
+}
+data5();
 
 
 
