@@ -350,7 +350,7 @@ let data3 = function () {
 
 
 let data4 = function () {
-    let isNumber = Number(prompt("Bir sayı giriniz778863"));
+    let isNumber = Number(prompt("Bir41 sayı giriniz778863"));
 
     switch (isNumber) {
         case 1:
