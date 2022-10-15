@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/image1.jpg" type="image/x-icon">
+    <title>Html5</title>
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"  />
+</head>
+
+<body>
+    <!-- start code -->
+<h1 align="center">Register</h1>
+<form action="#" method="get" autocomplete="on">
+    <table width="80%" border="0" cellpadding="8" cellspacing="1" id="register" name="register" enctype="multipart/form-data">
+        <tbody>
+            <tr>
+                <td>
+                    <label for="name"><i class="fa-solid fa-user" title="Adınız" ></i></label>
+                    </td>
+                <td><input type="text" autofocus required placeholder="Adınızı giriniz" id="name" name="name" /> </td>
+            </tr>
+            <tr>
+                <td><i class="fa-solid fa-clipboard-user" title="Soyadınız"></i></td>
+                <td><input type="text" required placeholder="Soyadınızı giriniz"  id="surname" name="surname" /> </td>
+            </tr>
+            <tr>
+                <td><i class="fa-solid fa-envelope" title="Email adresiniz"></i></td>
+                <td><input type="email" required placeholder="Emailinizi giriniz"   id="email" name="email"  /> </td>
+            </tr>
+            <tr>
+                <td><i class="fa-solid fa-key" title="Şifreniz"></i></td>
+                <td><input type="password" required placeholder="Şifrenizi giriniz"    id="password" name="password"   /> </td>
+            </tr>
+            <tr>
+                <td><i class="fa-solid fa-cake-candles" title="doğum günü"></i></td>
+                <td><input type="date" required    id="birthday" name="birthday"   /> </td>
+            </tr>
+          
+            <tr>
+                <td><i class="fa-solid fa-venus-mars" title="Cinsiyetiniz"></i></td>
+                <td>
+                    <input type="radio" name="gender" id="female" checked/>Bayan 
+                    <input type="radio" name="gender" id="male"/>Erkek </td>
+            </tr>
+     
+            <tr>
+                <td><i class="fa-solid fa-pen" title="Yetenekler"></i></td>
+                <td>
+                    <input type="checkbox" name="html" id="html" checked/>Html5 
+                    <input type="checkbox" name="css3" id="css3" />Css3 
+                    <input type="checkbox" name="js" id="js" />JS 
+            </tr>
+        
+            <tr>
+                <td><i class="fa-solid fa-city" title="Memleketiniz"></i></td>
+                <td>
+                   <select id="country" name="country" >
+                       <option value="0">Ülkenizi seçiniz</option>
+                       <option value="tr">Türkiye</option>
+                       <option value="fr">Fransa</option>
+                       <option value="ge">Almanya</option>
+                   </select>
+            </tr>
+
+            <br />
+            <tr>
+                <td></td>
+                <td><input type="reset" value="Temizle" /> <button type="submit">Gönder</button> </td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+
+
+
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<br>
+<br>
+<br>
+    <!-- iframe music video -->
+    <iframe src="https://akademi.ecodation.com/" frameborder="0" width="100%" height="400"></iframe>
+
+
+    <video width="400" controls>
+        <source src="../content/video/HTML%20Video.mp4" type="video/mp4">
+        <source src="mov_bbb.ogg" type="video/ogg">
+        Your browser does not support HTML video.
+    </video>
+
+
+    <audio controls>
+        <source src="horse.ogg" type="audio/ogg">
+        <source src="horse.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+
+    <hr>
+    <br>
+    <!-- map -->
+    <div style="width: 100%"><iframe width="100%" height="600" frameborder="1" scrolling="yes" marginheight="1"
+            marginwidth="1"
+            src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=istanbul+(Html5)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
+                href="https://www.ecodation.com">measure acres/hectares on map</a></iframe></div>
+    <hr>
+    <br>
+
+    <!-- favicon -->
+
+    <!--Araştırma Ödevi (A.Ö) semantic -nonSemantic nedir ? -->
+
+    <!-- table -->
+    <!-- table>thead>tr>th{item $}*3^tbody>tr>td{item $}*3^tfoot>tr>th{item}  -->
+    <table width="100%" border="1">
+        <thead>
+            <tr>
+                <th>SN</th>
+                <th>FrontEnd</th>
+                <th>BackEnd</th>
+                <th>Database</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ID 1</td>
+                <td>Html5</td>
+                <td>JavaSE</td>
+                <td><a href="http://www.google.com" target="_blank">
+                        <img src="../images/image1.jpg" height="40px" width="100%" alt="doğa" />
+                    </a></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="4">&copy; Bütün Haklar Saklıdır.</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <br>
+    <hr>
+    <!-- image link -->
+    <img>
+    <a href="http://www.google.com" target="_blank">Click Me</a>
+    <img src="../images/image1.jpg" />
+
+    <a href="http://www.google.com" target="_blank">
+        <img src="../images/image1.jpg" />
+    </a>
+
+    <br>
+    <hr>
+    <!-- liste -->
+    <!-- ol>li*3{item $} -->
+    <ol type="A" start="1">
+        <li>item </li>
+        <li>item </li>
+        <li>item </li>
+    </ol>
+
+    <!-- unordered list: düzenli olmayan listelerdir -->
+    <ul>
+        <li>item </li>
+        <li>item </li>
+        <li>item </li>
+    </ul>
+
+
+    <br>
+    <hr>
+    <!-- span div -->
+    <span>aynı satırda devam etmeye yarar <p>1.sürüm</p></span>
+    <span>aynı satırda devam etmeye yarar</span>
+    <div>alt satıra-1 geçmek.</div>
+    <div>alt satıra-2 geçmek.</div>
+
+
+    <br>
+    <hr>
+    <!-- formatter -->
+    <b>bold</b> <br />
+    <i>italic</i><br />
+    <big>big</big><br />
+    <small>small</small><br />
+    <strong>strong</strong><br />
+    10<sup>2</sup><br />
+    log <sub>2</sub><br />
+    <MARK>Fosforlu kalem</MARK> <br />
+    <em>Vurgulama</em> <br />
+    10 TL &nbsp; <del>9.99</del> TL <br />
+    system.out.println("Merhabalar"+"\n")
+    <code> system.out.println("Merhabalar"+"\n")</code>
+    <b><i><mark>deneme</mark></i></b>
+
+
+    <br>
+    <hr>
+    <!-- paragrag -->
+    <p>paragraf</p>
+    <br>
+    <hr>
+    <!-- heading -->
+    <h1>Heading -1 </h1>
+    <h2>Heading -2 </h2>
+    <h3>Heading -3 </h3>
+    <h4>Heading -4 </h4>
+    <h5>Heading -5 </h5>
+    <h6>Heading -6 </h6>
+
+    <hr>
+
+    <!-- end code -->
+</body>
+
+</html>
