@@ -252,7 +252,7 @@
 // console.log(hexadecimal);
 
 //KELIME
-let variable="Html5 Css3 js Öğreniyorum ";
+let variable = "Html5 Css3 js Öğreniyorum ";
 // console.log(variable.length);
 // document.writeln(variable.length);
 // document.writeln("<br/>"+variable.trim().length);
@@ -301,15 +301,86 @@ let variable="Html5 Css3 js Öğreniyorum ";
 // let resut4=deneme4("IT");
 // document.writeln("<br/>"+resut4)
 
-let data1=function (){
-    let isSoftware=true;
-    if(isSoftware){
-        document.writeln("<br/>"+"evet")
-    }else{
-        document.writeln("<br/>"+"hayır")
+let data1 = function () {
+    let isSoftware = true;
+    if (isSoftware) {
+        document.writeln("<br/>" + "evet")
+    } else {
+        document.writeln("<br/>" + "hayır")
     }
 }
-data1();
+//data1();
+
+
+let data2 = function () {
+    let isSoftware = true;
+    let result = (isSoftware) ?
+        document.writeln("<br/>" + "evet") : document.writeln("<br/>" + "hayır");
+}
+//data2();
+
+let data3 = function () {
+    let isNumber = Number(prompt("Bir sayı giriniz778863"));
+    if (isNumber == 1) {
+        5
+        document.writeln("<br/>" + "1")
+    } else if (isNumber == 2) {
+        document.writeln("<br/>" + "2")
+    }
+    else if (isNumber == 3) {
+        document.writeln("<br/>" + "3")
+    }
+    else if (isNumber == 4) {
+        document.writeln("<br/>" + "4")
+    }
+    else if (isNumber == 5) {
+        document.writeln("<br/>" + "5")
+    }
+    else if (isNumber == 6) {
+        document.writeln("<br/>" + "6")
+    }
+    else if (isNumber == 7) {
+        document.writeln("<br/>" + "7")
+    } else {
+        document.writeln("<br/>" + "1<=X<=7 dışında bir sayıdır")
+    }
+}
+//data3();
+
+
+
+let data4 = function () {
+    let isNumber = Number(prompt("Bir sayı giriniz778863"));
+
+    switch (isNumber) {
+        case 1:
+            document.writeln("<br/>" + "1")
+            break;
+        case 2:
+            document.writeln("<br/>" + "2")
+            break;
+        case 3:
+            document.writeln("<br/>" + "3")
+            break;
+        case 4:
+            document.writeln("<br/>" + "4")
+            break;
+        case 5:
+            document.writeln("<br/>" + "5")
+            break;
+        case 6:
+            document.writeln("<br/>" + "6")
+            break;
+        case 7:
+            document.writeln("<br/>" + "7")
+            break;
+
+        default:
+            document.writeln("<br/>" + "1<=X<=7 dışında bir sayıdır")
+            break;
+    }
+}
+data4();
 
 
 
