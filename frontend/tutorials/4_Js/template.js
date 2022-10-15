@@ -399,7 +399,6 @@ let data5 = function () {
         // k+=1;
     }
 
-
     document.writeln("<br/>" + "")
 
     //do-while döngüsü
@@ -410,10 +409,73 @@ let data5 = function () {
     }
     while (m <= 10);
 
+}
+//data5();
+
+
+
+
+let data6 = function () {
+    let dizi = [];
+    dizi[0] = "Ahmet";
+    dizi[1] = "Mehmet";
+    dizi[2] = 9;
+    dizi[3] = false;
+    dizi[4] = 14.52;
+    dizi[5] = 14.52;
+
+    //for döngüsü(1.YOL)
+    for (let i = 0; i < dizi.length; i++) {
+        document.write(" " + dizi[i])
+    }
+
+    document.writeln("<br/>" + "")
+
+
+    //for in (indis)
+    for (let temp in dizi) {
+        document.write(" " + temp)
+    }
+
+    document.writeln("<br/>" + "")
+
+    //for of (data)
+    for (let temp of dizi) {
+        document.write(" " + temp)
+    }
+
+    dizi.sort()
+
+    //EKLEMEK
+    dizi.push("en son")
+    dizi.unshift("en başa")
+
+    //Foreach(4.YOL)
+    document.writeln("<br/>" + "")
+    dizi.forEach(function (temp) { document.write(" " + temp) })
+
+    //ÇIKARMAK
+    dizi.pop()
+    dizi.shift()
+
+    //Foreach(4.YOL)
+    document.writeln("<br/>" + "")
+    dizi.forEach(function (temp) { document.write(" " + temp) })
 
 }
-data5();
+//data6();
 
+let data7 = function () {
+    let dizi = [1, 2, 3, 4, 5];
+    let dataFilter = dizi.filter((temp) => { return temp >= 3 })
+    document.write(" " + dataFilter)
+
+    document.writeln("<br/>" + "")
+
+    let dataMap = dizi.map((temp) => { return temp += 3 })
+    document.write(" " + dataMap)
+}
+data7();
 
 
 
