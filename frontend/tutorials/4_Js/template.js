@@ -276,30 +276,41 @@ let variable="Html5 Css3 js Öğreniyorum ";
 //lastIndexOf
 
 /////////////////////////////////////////////////////////
-function deneme1(){
-    document.writeln("<br/>"+"parametresiz ve returnsuz function")
+// function deneme1(){
+//     document.writeln("<br/>"+"parametresiz ve returnsuz function")
+// }
+// deneme1()
+
+
+// function deneme2(adi){
+//     document.writeln("<br/>"+"parametreli ve returnsuz function "+adi)
+// }
+// deneme2("Hamit")
+
+
+// function deneme3(){
+//     return "parametresiz ve returnlu function";
+// }
+// let resut3=deneme3();
+// document.writeln("<br/>"+resut3)
+
+
+// function deneme4(departmant){
+//     return "parametreli ve returnlu function "+departmant;
+// }
+// let resut4=deneme4("IT");
+// document.writeln("<br/>"+resut4)
+
+let data1=function (){
+    let isSoftware=true;
+    if(isSoftware){
+        document.writeln("<br/>"+"evet")
+    }else{
+        document.writeln("<br/>"+"hayır")
+    }
 }
-deneme1()
+data1();
 
-
-function deneme2(adi){
-    document.writeln("<br/>"+"parametreli ve returnsuz function "+adi)
-}
-deneme2("Hamit")
-
-
-function deneme3(){
-    return "parametresiz ve returnlu function";
-}
-let resut3=deneme3();
-document.writeln("<br/>"+resut3)
-
-
-function deneme4(departmant){
-    return "parametreli ve returnlu function "+departmant;
-}
-let resut4=deneme4("IT");
-document.writeln("<br/>"+resut4)
 
 
 
