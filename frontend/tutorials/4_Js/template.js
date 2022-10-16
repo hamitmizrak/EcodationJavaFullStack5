@@ -314,8 +314,9 @@ let data1 = function () {
 
 let data2 = function () {
     let isSoftware = true;
-    let result = (isSoftware) ?
-        document.writeln("<br/>" + "evet") : document.writeln("<br/>" + "hayır");
+    //Ternary
+    //(karar) ? "EVET" :"HAYIR" ;
+    let result = (isSoftware) ? document.writeln("<br/>" + "evet") : document.writeln("<br/>" + "hayır");
 }
 //data2();
 
@@ -412,9 +413,8 @@ let data5 = function () {
 }
 //data5();
 
-
-
-
+// git / linux 
+// mysql 
 let data6 = function () {
     let dizi = [];
     dizi[0] = "Ahmet";
@@ -461,7 +461,6 @@ let data6 = function () {
     //Foreach(4.YOL)
     document.writeln("<br/>" + "")
     dizi.forEach(function (temp) { document.write(" " + temp) })
-
 }
 //data6();
 
@@ -475,13 +474,54 @@ let data7 = function () {
     let dataMap = dizi.map((temp) => { return temp += 3 })
     document.write(" " + dataMap)
 }
-data7();
-
-
+//data7();
 
 /////////////////////////////////////////////////////////
-//döngüler for/while do-while  
-//diziler 
-//object
+// döngüler for/while do-while
+// diziler
+// object
+let data = {
+    "adi": "Hamit",
+    "soyadi": "Mızrak",
+    "isEngineer": true,
+    "languageTech": 12
+};
+
+//Normal Function
+function deneme() { }
+
+//ES5(Anonymous Function)
+let data41 = function () { }
+
+//ES6(Arrow Function , fate function)
+let data42 = () => { }
+
+let result = () => {
+    let person = {
+        "firstname": "Hamit",
+        "lastname": "Mızrak",
+        "isLogin": true,
+        "javaTech": ["spring", "springboot", "springmvc", "springsecurity"]
+    }
+    console.log(person)
+    console.log(typeof person)
+    console.log(person.firstname.toUpperCase());
+    console.log(person.javaTech[0]);
+    console.log(person.javaTech[person.javaTech.length - 1]);
+}
+//result()
+
+let result2 = (adi, soyadi) => {
+    this.adi = adi,
+        this.soyadi = soyadi
+    console.log(this)
+}
+
+//result2("Hamit", "Mızrak")
+let sum = () => {
+    setInterval(function () { console.log("merhabalar") }, 3000);
+}
+sum()
+
 
 
