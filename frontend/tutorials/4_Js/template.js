@@ -574,3 +574,13 @@ let data10 = () => {
 }
 
 //data10();
+
+//eventListener(olay,fonksiyon,false)
+//Anonymous function EventListener
+let value = document.getElementById("deneme_id");
+let eventListenerData1 = value.addEventListener(
+    "click",
+    function (e) { alert("Doğa  Harika") },
+    false)
+//Arrow function EventListener
+let eventListenerData2 = value.addEventListener("click", (e) => { alert("Doğa  Harika") }, false)
