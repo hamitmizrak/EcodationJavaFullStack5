@@ -544,7 +544,43 @@ function callBackFunctionIkinci(callback) {
 callBackFunctionIkinci(callBackFunctionBirinci)
 
 
+let dataAllExamples = () => {
+    let value = Number(prompt("lütfen bir sayı giriniz"));
+    let counter = 0, sum = 0;
+    let oddCounter = 0, oddSum = 0;
+    let evenCounter = 0, evenSum = 0;
+    for (let i = 1; i <= value; i++) {
 
+        if (i === 7)
+            continue;
+        if (i > 100)
+            break;
+            if(i<=1){
+                alert("başlangıçtan küçük giremezsiniz")
+                break;
+            }
+            
+        counter++;
+        sum += i;
+        if (i % 2 == 0) {
+            eventCounter++;
+            eventSum += i;
+        } else {
+            oddCounter++;
+            oddSum += i;
+        }
+    }
+    document.writeln("<br/>" + counter + " tane sayı var.")
+    document.writeln("<br/>" + sum + " toplamı")
+
+    document.writeln("<br/>" + oddCounter + " tane tek sayı var.")
+    document.writeln("<br/>" + oddSum + " tek sayı toplamı")
+
+    document.writeln("<br/>" + evenCounter + " tane çift sayı var.")
+    document.writeln("<br/>" + evenSum + " çift sayı toplamı")
+
+}
+dataAllExamples();
 
 //ÖDEV (if-else for break continue)
 //Fonksiyonlarla
@@ -577,10 +613,10 @@ let data10 = () => {
 
 //eventListener(olay,fonksiyon,false)
 //Anonymous function EventListener
-let value = document.getElementById("deneme_id");
-let eventListenerData1 = value.addEventListener(
-    "click",
-    function (e) { alert("Doğa  Harika") },
-    false)
-//Arrow function EventListener
-let eventListenerData2 = value.addEventListener("click", (e) => { alert("Doğa  Harika") }, false)
+// let value = document.getElementById("deneme_id");
+// let eventListenerData1 = value.addEventListener(
+//     "click",
+//     function (e) { alert("Doğa  Harika") },
+//     false)
+// //Arrow function EventListener
+// let eventListenerData2 = value.addEventListener("click", (e) => { alert("Doğa  Harika") }, false)
