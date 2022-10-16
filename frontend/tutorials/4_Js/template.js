@@ -519,9 +519,58 @@ let result2 = (adi, soyadi) => {
 
 //result2("Hamit", "Mızrak")
 let sum = () => {
-    setInterval(function () { console.log("merhabalar") }, 3000);
+    setInterval(function () { console.log("merhabalar") }, 1000);
 }
-sum()
+//sum()
+
+//norm function
+function normFunctionBirinci(number) {
+    console.log(Math.pow(number, 2))
+}
+
+function normFunctionIkinci() {
+    normFunctionBirinci(4)
+}
+normFunctionIkinci()
+
+//callback function
+function callBackFunctionBirinci(number) {
+    console.log(Math.pow(number, 2))
+}
+
+function callBackFunctionIkinci(callback) {
+    callback(4)
+}
+callBackFunctionIkinci(callBackFunctionBirinci)
 
 
 
+
+//ÖDEV (if-else for break continue)
+//Fonksiyonlarla
+//Örnek: 1 ile kullanıcının vereceği (prompt) bitiş sayısına göre
+//kullancı: 5 verdi diyelim 1<=X<=5
+//1.adım: kaç tane sayı var ?
+//2.adım: sayı toplamları var ?
+//3.adım: kaç tane tek  sayı var ?
+//4.adım: tek sayılar toplamı ?
+//5.adım: tek sayılar gösterelim ?
+//6.adım: kaç tane çift  sayı var ?
+//7.adım: çift sayılar toplamı ?
+//8.adım: çift sayılar gösterelim ?
+//Eğer verilen sayılarda 7 sayısı varsa bunu eklemesin (continue)
+//Eğer bitiş sayısı 100 fazla ise 100'e kadar olanlar toplansın  (break)
+//Eğer kullanıcı başlangıç sayıdan küçük girerse uyaralım başlangıçtan büyük girmesini isteyelim
+//Eğer kullanıcı secret-key girerse yani 44 sayısını girerse program çalışmayı direk durdursun
+
+
+//DOM: Document Object Model
+//JS => Html+Css+JS
+let data10 = () => {
+    let userData = prompt("Lütfen bir şey yazınız");
+    let value = document.getElementById("paragId");
+    value.innerHTML = "<mark><b>" + userData + "</b></mark>";
+    //value.innerText = "<b>" + userData + "</b>";
+}
+
+//data10();
