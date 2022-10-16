@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <h2 class="text-center44 display-3 mt-5 mb-3 text-uppercase">Todo List</h2>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="addItem">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#add"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Add
+                </button>
+            </h2>
+            <div id="add" class="accordion-collapse collapse show" aria-labelledby="addItem"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <input type="text"> <button class="btn btn-primary btn-sm">Ekle</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="todo1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#todo2"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Todo
+                </button>
+            </h2>
+            <div id="todo2" class="accordion-collapse collapse show" aria-labelledby="todo1"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    This is the first item's accordion body.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="completed1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#completed2"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Completed
+                </button>
+            </h2>
+            <div id="completed2" class="accordion-collapse collapse show" aria-labelledby="completed1"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    This is the first item's accordion body.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+</body>
+</html>
