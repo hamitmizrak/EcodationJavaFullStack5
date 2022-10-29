@@ -5,6 +5,8 @@ project author: Hamit Mızrak
 project version: V.1
 */
 
+/*########################################*/
+/* common property*/
 /* base config  */
 :root {
     --primary-color: #007bff !important;
@@ -41,6 +43,21 @@ img {
     transition: 1s all;
 }
 
+img:hover {
+    /* opacity: 0.9; */
+    opacity: .9;
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, .7);
+    cursor: pointer;
+}
+
 ul {
     list-style-type: none;
 }
+
+p {
+    text-align: center;
+    margin: 0.3rem 0.8rem;
+}
+
+/*########################################*/
+/*line-clamp*/
