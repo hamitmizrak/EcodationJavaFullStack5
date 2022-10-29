@@ -23,7 +23,7 @@ project version: V.1
 }
 
 html {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 body {
@@ -60,7 +60,7 @@ p {
 }
 
 i {
-    font-size: 1rem;
+    font-size: 2rem;
 }
 
 /*########################################*/

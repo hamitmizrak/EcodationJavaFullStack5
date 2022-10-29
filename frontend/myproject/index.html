@@ -37,8 +37,8 @@
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
     <!-- react libraries -->
-    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script> -->
 
     <!-- animate CSS-->
     <link rel="stylesheet" href="css/animate.min.css">
@@ -93,25 +93,24 @@
                     </li>
                 </ul>
 
-
-                <form class="d-flex my-2 my-lg-0">
+                <form class="d-flex my-2 my-lg-0 me-auto">
                     <input class="form-control me-sm-2" id="tags" type="text" placeholder="Arama ...">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ara</button>
                 </form>
 
-                <li class="nav-item dropdown ms-auto">
+                <li class="nav-item dropdown me-auto">
                     <a class="nav-link" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false"><i class="fa-solid fa-user-lock"></i></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
-                        <a class="dropdown-item" href="#">Register</a>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#register"
+                            data-bs-whatever="@mdo">Kayıt ol</button>
                         <a class="dropdown-item" href="#">Login</a>
                     </div>
                 </li>
-                <li class="nav-item ms-1">
+                <li class="nav-item ms-1 me-auto">
                     <button onclick="darkLight()" class="btn btn-primary btn-lg"><i class="fa-regular fa-moon"></i>
                     </button>
                 </li>
-
             </div>
             <!--end div  -->
         </div>
@@ -119,6 +118,97 @@
     </nav>
     <!--end nav -->
     <!-- nav end -->
+
+
+
+    <div class="modal fade" id="register" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="get" autocomplete="on">
+                        <div class="form-group">
+                            <input type="text" class="form-control mb-2 mt-4" placeholder="kullanıcı adı"
+                                required="true" autofocus="true" id="username" name="username" />
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control mb-2 mt-4" placeholder="kullanıcı email"
+                                required="true" id="email" name="email" />
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" class="form-control mb-2 mt-4" placeholder="kullanıcı password"
+                                required="true" id="password" name="password" />
+                        </div>
+
+                        <button type="reset" class="btn btn-danger">Temizle</button>
+                        <button type="submit" class="btn btn-primary">Temizle</button>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- register modal -->
+    <!-- bs5-modal-default -->
+    <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+        aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">Register Modal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="get" autocomplete="on">
+                        <div class="form-group">
+                            <input type="text" class="form-control mb-2 mt-4" placeholder="kullanıcı adı"
+                                required="true" autofocus="true" id="username" name="username" />
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control mb-2 mt-4" placeholder="kullanıcı email"
+                                required="true" id="email" name="email" />
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" class="form-control mb-2 mt-4" placeholder="kullanıcı password"
+                                required="true" id="password" name="password" />
+                        </div>
+
+                        <button type="reset" class="btn btn-danger">Temizle</button>
+                        <button type="submit" class="btn btn-primary">Temizle</button>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Optional: Place to the bottom of scripts -->
+    <script>
+        const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
+
+    </script>
+
+
+
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio consequatur autem, exercitationem velit ullam quia
         natus pariatur praesentium explicabo possimus ipsa ipsam officia nostrum. Velit nisi neque et iusto maiores?
