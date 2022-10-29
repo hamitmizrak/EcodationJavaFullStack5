@@ -1,1 +1,46 @@
-font-family: 'Source Code Pro', monospace;
+/*
+project name: one pages
+project create date: 29 Ekim 2023
+project author: Hamit Mızrak
+project version: V.1
+*/
+
+/* base config  */
+:root {
+    --primary-color: #007bff !important;
+    --secondary-color: #4fe4a8 !important;
+    --dark-color: #3b5b5d !important;
+    --max-width: 1100px;
+}
+
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 20px;
+}
+
+body {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 2rem;
+    line-height: 1.4;
+    background-color: var(--primary-color);
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    transition: 1s all;
+}
+
+ul {
+    list-style-type: none;
+}
