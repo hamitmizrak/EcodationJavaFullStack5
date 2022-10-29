@@ -13,6 +13,7 @@ project version: V.1
     --secondary-color: #4fe4a8 !important;
     --dark-color: #3b5b5d !important;
     --max-width: 1100px;
+    --navbar-icon-color: chartreuse;
 }
 
 * {
@@ -44,8 +45,6 @@ img {
 }
 
 img:hover {
-    /* opacity: 0.9; */
-    opacity: .9;
     box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, .7);
     cursor: pointer;
 }
@@ -61,3 +60,29 @@ p {
 
 /*########################################*/
 /*line-clamp*/
+
+
+
+/*########################################*/
+/*navbar*/
+#navbar ul li a span {
+    font-size: 0.9rem;
+    margin-left: 0.6rem;
+}
+
+#navbar ul li a i {
+    font-size: 1rem;
+    color: var(--navbar-icon-color);
+}
+
+#logo {
+    border-radius: 50%;
+    height: 4rem;
+}
+
+#logo:hover {
+    /* opacity: 0.9; */
+    opacity: .8;
+    box-shadow: 1px 1px 3px 1px rgba(255, 255, 255, .7);
+
+}
