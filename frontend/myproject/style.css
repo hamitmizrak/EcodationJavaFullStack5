@@ -59,6 +59,10 @@ p {
     text-align: justify;
 }
 
+i {
+    font-size: 1rem;
+}
+
 /*########################################*/
 /*line-clamp*/
 
@@ -87,9 +91,14 @@ p {
     box-shadow: 1px 1px 3px 1px rgba(255, 255, 255, .7);
 }
 
+#dropdownId {
+    margin-top: -3rem;
+}
+
 /*########################################*/
 /*dark-light */
 .dark_mode {
     background-color: #000000;
     color: azure;
+    margin-left: .6rem;
 }

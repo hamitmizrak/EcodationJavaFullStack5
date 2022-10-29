@@ -61,6 +61,7 @@
 
     <!-- bs5-navbar-default -->
     <nav id="navbar" class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+        <!-- container-fluid -->
         <div class="container">
             <a class="navbar-brand" href="index.html"><img src="./pictures/logo.png" alt="ecodation" id="logo"
                     loading="lazy" /></a>
@@ -71,7 +72,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                     <li class="nav-item">
                         <a class="nav-link " href="#"><i class="fa-solid fa-landmark"></i><span>Ability</span> </a>
                     </li>
@@ -90,25 +91,27 @@
                         <a class="nav-link " href="#"><i class="fa-solid fa-location-dot"></i><span>Contact</span>
                         </a>
                     </li>
-
-                    <li class="nav-item">
-                        <button  onclick="darkLight()"><i class="fa-regular fa-moon"></i>
-                        </button>
-                    </li>
-
-                    <li class="nav-item dropdown ms-auto">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-user-lock"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="#">Register</a>
-                            <a class="dropdown-item" href="#">Login</a>
-                        </div>
-                    </li>
                 </ul>
+
+
                 <form class="d-flex my-2 my-lg-0">
                     <input class="form-control me-sm-2" id="tags" type="text" placeholder="Arama ...">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ara</button>
                 </form>
+
+                <li class="nav-item dropdown ms-auto">
+                    <a class="nav-link" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false"><i class="fa-solid fa-user-lock"></i></a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#">Register</a>
+                        <a class="dropdown-item" href="#">Login</a>
+                    </div>
+                </li>
+                <li class="nav-item ms-1">
+                    <button onclick="darkLight()" class="btn btn-primary btn-lg"><i class="fa-regular fa-moon"></i>
+                    </button>
+                </li>
+
             </div>
             <!--end div  -->
         </div>
