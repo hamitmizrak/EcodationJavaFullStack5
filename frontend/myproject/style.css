@@ -58,7 +58,7 @@ ul {
 p {
     text-align: center;
     margin: 0.3rem 0.8rem;
-    text-align: justify;
+    /* text-align: justify; */
 }
 
 i {
@@ -67,6 +67,33 @@ i {
 
 /*########################################*/
 /*line-clamp*/
+.line_clamp4 {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.line_clamp8 {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+}
+
+.line_clamp9 {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 9;
+    -webkit-box-orient: vertical;
+}
+
+.line_clamp10 {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+}
 
 
 
@@ -112,7 +139,7 @@ i {
     background-size: cover;
     background-position: 50% 50%;
     z-index: -1;
-    height: 110vh;
+    height: 95vh;
     padding-top: 15rem;
 }
 
@@ -125,9 +152,52 @@ h4 {
 
 /*########################################*/
 /*main*/
+/* our_work */
+#our_work {
+    margin: 1rem;
+}
+
+/* çalışmalar */
+#our_work i {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+}
+
+/* counter */
+#counter {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: rgba(60, 42, 215, 0.7);
+    color: #fff;
+}
+
+#counter .counters {
+    padding-top: 2rem;
+}
 
 
+/* blog*/
+#blog {
+    position: relative;
+    padding: 10rem
+}
 
+#blog::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0px;
+    content: "";
+    background-image: url('./pictures/home-office-g32b1224ae_1920.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: .8;
+}
+
+#blog .card{
+    margin-top: 1.2rem;
+}
 
 /*########################################*/
 /*footer*/

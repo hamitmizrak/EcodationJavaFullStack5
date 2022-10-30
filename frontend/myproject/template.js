@@ -39,7 +39,19 @@ $(function () {
     });
 });
 
+////////////////////////////////////////////////////////////////////////
+//Main
+$(function () {
+    $('[data-toggle="counter-up]').counterUp({
+        delay: 10,
+        time: 1000
+    })
+});
 
+
+
+////////////////////////////////////////////////////////////////////////
+//FOOTER
 //nowdate
 let nowDate = () => {
     let date = document.getElementById("now_date").innerHTML = new Date().getFullYear();
