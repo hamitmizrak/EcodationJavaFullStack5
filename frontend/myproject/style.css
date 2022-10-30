@@ -9,7 +9,7 @@ project version: V.1
 /* common property*/
 /* base config  */
 :root {
-    --primary-color: #007bff !important;
+    --primary-color: #e3e8ed !important;
     --secondary-color: #4fe4a8 !important;
     --dark-color: #3b5b5d !important;
     --max-width: 1100px;
@@ -23,7 +23,7 @@ project version: V.1
 }
 
 html {
-    font-size: 18px;
+    font-size: 15px;
 }
 
 body {
@@ -60,7 +60,7 @@ p {
 }
 
 i {
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 /*########################################*/
@@ -95,10 +95,26 @@ i {
     margin-top: -3rem;
 }
 
-/*########################################*/
 /*dark-light */
 .dark_mode {
     background-color: #000000;
     color: azure;
     margin-left: .6rem;
+}
+
+
+/*########################################*/
+/*header*/
+#header{
+    background-image: url('./pictures/home-office-g32b1224ae_1920.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index:-1;
+    height: 110vh;
+    padding-top:15rem;
+}
+
+#header a,h1,h4{
+    color: #ffffff;
+    background-color: #171818;
 }

@@ -30,11 +30,11 @@ $(function () {
         }
 
         if (register_email == "") {
-            $("#validation_email").html("Kullanıcı adı boş geçilemez")
+            $("#validation_email").html("Kullanıcı email boş geçilemez")
         }
 
         if (register_password == "") {
-            $("#validation_password").html("Kullanıcı adı boş geçilemez")
+            $("#validation_password").html("Kullanıcı şifresi boş geçilemez")
         }
 
     })
