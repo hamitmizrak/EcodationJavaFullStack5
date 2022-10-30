@@ -114,7 +114,23 @@ i {
     padding-top:15rem;
 }
 
-#header a,h1,h4{
+#header h1,h4{
     color: #ffffff;
     background-color: #171818;
+}
+
+
+/*########################################*/
+/*main*/
+
+
+
+
+/*########################################*/
+/*footer*/
+footer{
+    min-height: 20rem;
+    width: 100%;
+    background-color: #3b5b5d;
+    color:white;
 }

@@ -40,3 +40,9 @@ $(function () {
     })
 });
 
+
+//nowdate
+let nowDate = () => {
+    let date = document.getElementById("now_date").innerHTML = new Date().getFullYear();
+}
+nowDate();
