@@ -36,8 +36,7 @@ $(function () {
         if (register_password == "") {
             $("#validation_password").html("Kullanıcı şifresi boş geçilemez")
         }
-
-    })
+    });
 });
 
 
@@ -46,3 +45,19 @@ let nowDate = () => {
     let date = document.getElementById("now_date").innerHTML = new Date().getFullYear();
 }
 nowDate();
+
+//backtop
+$(function () {
+    $(window).scroll(function () {
+        if ($(this).scrollTop > 100) {
+            $("#back_top").fadeIn('slow');
+        } else {
+            $("#back_top").fadeOut('slow');
+        }
+    });
+
+    $("#back_top").click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 100, 'easeInOutExpo');
+        return false;
+    });
+});
