@@ -10,7 +10,7 @@ public class _10_Random {
 
         //Random object
         Random rastgele=new Random();
-        int number= rastgele.nextInt(4)+1;
+        int number= rastgele.nextInt(10)+1; //1<=X<=4
         System.out.println(number);
     }
 }
