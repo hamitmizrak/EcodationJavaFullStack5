@@ -16,7 +16,7 @@ public class _03_Examples {
         // Dereceyi Fahrenhayt
         // (derece*9/5)+32
         // 0 derece 32 fahrenhayttır
-        double degree=0,fahrenhayt;
+        double degree=0,fahrenhayt=0;
         fahrenhayt=(degree*9/5)+32;
         System.out.println(fahrenhayt);
 
