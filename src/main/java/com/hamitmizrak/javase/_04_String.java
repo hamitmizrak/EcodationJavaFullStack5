@@ -25,5 +25,7 @@ public class _04_String {
             System.out.println( value.substring(0,3)); //0<=X<=3-1
         }
 
+        //ödev isim ve soyiminizi yukarıdaki örneklere benzeterek yapalım.
+
     }
 }
