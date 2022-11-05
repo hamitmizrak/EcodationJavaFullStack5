@@ -67,5 +67,7 @@ public class _01_JavaVariable {
         //char
         Character wc4 = '&';
 
+
+
     }
 }
