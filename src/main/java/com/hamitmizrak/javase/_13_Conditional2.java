@@ -27,7 +27,7 @@ public class _13_Conditional2 {
                     int computerNumber= random.nextInt(10)+1;
                     System.out.println(computerNumber);
 
-                    if(COUNTER>=5){
+                    if(COUNTER>5){
                         System.out.println("Sayı tahmin sayınız 5 oldu ve sistemden çıkarıldınız");
                         break;
                     }
