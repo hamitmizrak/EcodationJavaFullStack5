@@ -17,6 +17,9 @@ public class _19_Formatter {
         System.out.printf("%40s  %10d  %f ",str,decimal,point);
         System.out.println();
         System.out.printf("%40s  %10d  %4.2f ",str,decimal,point);
+
+
+
     }
 
 }

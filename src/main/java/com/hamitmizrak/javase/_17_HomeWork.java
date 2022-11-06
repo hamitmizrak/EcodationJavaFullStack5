@@ -11,10 +11,7 @@ public class _17_HomeWork {
 
     // Kullanıcı tarafından girilen haftanın gününü bulan algoritma
 
-    // Örnek: 1-10 arasında 5 tane random sayı üretelim ?
-    // Bu sayıları toplayalım
-    // Bu sayılar içinde tek sayı toplamı
-    // Bu sayılar içinde tek sayı adeti
+
 
     // Vize Final Ödevi
     // kullanıcıdan alınan vize ve final notuna göre geçme(ortalama) Algoritması
