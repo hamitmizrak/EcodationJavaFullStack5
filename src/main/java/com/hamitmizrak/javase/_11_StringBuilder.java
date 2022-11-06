@@ -5,7 +5,7 @@ import java.util.Random;
 public class _11_StringBuilder {
 
     public static void main(String[] args) {
-        String str1="Javase",str2="javaee",str3="javame";
+        String str1="Javase ",str2="javaee ",str3="javame ";
         //birleştirmek
 
         //1
