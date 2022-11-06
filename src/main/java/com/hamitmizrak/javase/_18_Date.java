@@ -21,6 +21,7 @@ public class _18_Date {
         System.out.println(date.getMinutes());
         System.out.println(date.getSeconds());
         System.out.println(date.getYear()+1900);
+        System.out.println(date.getHours()+":"+date.getMinutes()+":"+date.getSeconds());
         ///////////////////////////////////////
 
         //currentTimeMillis: 1 ocak 1970 yılından şimdiye kadar geçen milisaniye
@@ -39,6 +40,7 @@ public class _18_Date {
         date2.setMonth(0);
         System.out.println(date2.getMonth());
 
+
         ///////////////////////////////////////
 
         //LOCALE pattern
@@ -55,7 +57,6 @@ public class _18_Date {
 
         System.out.println(new SimpleDateFormat("dd/MMMM/yyyy HH:mm:ss", new Locale("tr","TR")).
                 format(new Date()));
-
 
     }
 
