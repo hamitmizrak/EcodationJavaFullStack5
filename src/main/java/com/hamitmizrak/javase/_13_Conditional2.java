@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 //Casting: Dönüşüm
 public class _13_Conditional2 {
+    //object field
+    private static int COUNTER=1;
 
     public static void main(String[] args) {
      // kullanıcıdan aldığımız bir sayıyı tahmin eden bir oyun algoritması yazınız ?
@@ -17,7 +19,6 @@ public class _13_Conditional2 {
             char number= klavye.nextLine().charAt(0);
 
             if(Character.isDigit(number)){
-                System.out.println("Bu bir sayıdır");
                 if(number<0){
                     System.out.println("Lütfen negatif girmeyiniz");
                 }else{
@@ -26,10 +27,17 @@ public class _13_Conditional2 {
                     int computerNumber= random.nextInt(10)+1;
                     System.out.println(computerNumber);
 
-                    if( Math.round(Math.abs(number))==computerNumber){
-                        System.out.println("bilgisayar:"+computerNumber+" kişi: "+number+"Doğru tahmin ettiniz:");
+                    if(COUNTER>=5){
+                        System.out.println("Sayı tahmin sayınız 5 oldu ve sistemden çıkarıldınız");
+                        break;
+                    }
+                    if(Math.abs(number)==computerNumber){
+                        System.out.println("Girdiğiniz giriş sayısı: "+COUNTER);
+                        System.out.println("tahmin sayınız: "+number+ " bilgisayar sayıyı: "+computerNumber+" EŞLEŞTİ:");
                     }else if(number!=computerNumber){
-                        System.out.println("bilgisayar:"+computerNumber+" kişi: "+number+"!!!! Doğru tahmin etmediniz:");
+                        System.out.println("Girdiğiniz giriş sayısı: "+COUNTER);
+                        System.out.println("tahmin sayınız: "+number+ " bilgisayar sayıyı: "+computerNumber+" EŞLEŞMEDİ:");
+                        COUNTER++;
                     }  else{
                         System.out.println("lütfen sayı giriniz");
                     }
@@ -39,6 +47,5 @@ public class _13_Conditional2 {
             else
                 System.out.println("Bu bir özel simge  lütfen sayı giriniz");
         }
-
     }
 }
