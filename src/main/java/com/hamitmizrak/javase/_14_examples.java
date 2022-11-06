@@ -17,15 +17,17 @@ public class _14_examples {
         System.out.println("Lütfen şifreyi tekrar giriniz");
         repassword= klavye.nextLine();
 
-        /*if(password.equals(repassword)){
+        //sayılarda   ==>  ==     kullanalım
+        //kelimelerde ==>  equals kullanalım
+        if(password==repassword){
             System.out.println("Şifreler aynı");
         }else{
             System.out.println("Şifreler farklı");
-        }*/
+        }
 
         //ternary
-        String result = (password.equals(repassword)) ? "Şifreler aynı" : "Şifreler farklı";
-        System.out.println(result);
+        /*String result = (password.equals(repassword)) ? "Şifreler aynı" : "Şifreler farklı";
+        System.out.println(result);*/
 
     }
 
