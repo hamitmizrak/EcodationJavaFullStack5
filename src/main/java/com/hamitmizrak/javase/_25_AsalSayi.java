@@ -49,6 +49,5 @@ public class _25_AsalSayi {
         while(true){
             isPrimeResult();
         }
-
     }
 }
