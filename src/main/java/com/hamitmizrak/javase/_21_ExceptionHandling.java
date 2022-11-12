@@ -14,6 +14,8 @@ public class _21_ExceptionHandling {
             //arithmeticException.printStackTrace();
             //throw new ArithmeticException("istisna meydana geldi burada dur "+arithmeticException);
             //throw new HamitMizrakException("benim yazdığım istisna burada dur");
+            arithmeticException.toString();
+            arithmeticException.printStackTrace();
         }catch (Exception e){
             e.printStackTrace();
         }finally {
