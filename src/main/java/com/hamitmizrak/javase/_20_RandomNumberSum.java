@@ -12,7 +12,7 @@ public class _20_RandomNumberSum {
     public static void main(String[] args) {
         Random random=new Random();
         int sum=0,oddSum=0,oddCounter=0;
-        String number = "",oddNumber="";
+        String number = "",oddNumber=""; //null pointer exception almamak
         for (int i = 1; i <=5 ; i++) {
             int randomNumber=random.nextInt(10)+1;
             //sayı toplamları
@@ -36,5 +36,4 @@ public class _20_RandomNumberSum {
         System.out.println("Tek Sayılar sayı adedi: "+oddCounter);
         System.out.println("Tek Sayı toplamı: "+oddSum);
     }
-
 }
