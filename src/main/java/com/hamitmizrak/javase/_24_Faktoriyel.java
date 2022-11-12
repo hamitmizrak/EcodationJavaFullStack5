@@ -59,7 +59,6 @@ public class _24_Faktoriyel {
         }
     }
 
-
     //Encapsulation
     public static void main(String[] args) throws _00_HamitMizrakException {
         for (;;){
