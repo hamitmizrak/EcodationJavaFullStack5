@@ -5,7 +5,7 @@ import java.util.Scanner;
 // Kullanıcıdan aldığımız password ve repassword datasını
 // step 1: password -repassword eğer eşitse eşleşti yazsın yoksa eşleşmedi
 // step 2: kullanıcının eşleştirmediği süre zarfında tek boyutlu diziye atasın
-// step 3: ancak kullanıcın yanlış yapma hakkı 5 olsun (tek boyutlu dizi eleman sayısı:5)
+// step 3: ancak kullanıcın yanlış yapma  olsun (tek boyutlu dizi eleman sayısı:5)
 // w3school Java
 public class _34_ArrayExamples {
 
@@ -24,39 +24,37 @@ public class _34_ArrayExamples {
 
     private static boolean getPasswordRePasswordEquals() {
         String[] array = getDataFromUser();
-        String[] isError=new String[5];
+        String[] isError = new String[1];
         String password = array[0];
         String rePassword = array[1];
-        if (password.equals(rePassword))
+        if (password.equals(rePassword)){
+            System.out.println("Eşleşti !!!");
             return true;
-        else{
-           if(isError[0]!=null){
-               System.out.println("Bir önceki şifre hatanız: "+isError[0]);
-           }
+        } else {
             System.out.println("Eşleşmedi !!!");
             //for loop
-            isError[0]=rePassword;
+            isError[0] = rePassword;
+            if (isError[0] != null) {
+                System.out.println("Bir önceki şifre hatanız: " + isError[0]);
+            }
         }
-            return false;
+        return false;
     }
 
     private static void getResult() {
-        boolean data=getPasswordRePasswordEquals();
+        boolean data = getPasswordRePasswordEquals();
         String[] isError;
         if (data) {
             System.out.println("Admin Sayfasına yönlendiriliyor");
             System.exit(0);
         } else {
-            System.out.println("Register !!!");
+            System.out.println("Register sayfasına tekrar yönlendiriliyorsunuz. !!!");
         }
     }
 
     public static void main(String[] args) {
-
-        while(true){
+        while (true) {
             getResult();
         }
-
     }
-
 }

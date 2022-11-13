@@ -7,7 +7,4 @@ import java.util.Scanner;
 // üretilen sayılardan çift kaç tane ve toplamları
 public class _35_ArrayExamples {
 
-
-
-
 }
