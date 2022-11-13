@@ -6,7 +6,7 @@ import java.util.Scanner;
 // Dikkat: metotlarla yapalım.
 // Fibonacci: sondan 2 sayının toplamıdır
 // 1 1 2 3 5 8 13 21 ...
-// Dizi Örneği:
+// Dizi Örneği: Enum- Diziler
 
 public class _26_Fibonacci {
     public static int userScannerData() throws _00_HamitMizrakException {
@@ -46,12 +46,11 @@ public class _26_Fibonacci {
 
     public static void fibonacciResult() throws _00_HamitMizrakException {
         int number=userScannerData();
-       int  fibo= fibonacciRecursive(number);
+        int fibo= fibonacciRecursive(number);
         System.out.println(fibo);
     }
 
     public static void main(String[] args) throws _00_HamitMizrakException {
-
         fibonacciResult();
     }
 }

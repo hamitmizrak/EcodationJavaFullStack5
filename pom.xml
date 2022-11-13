@@ -31,6 +31,14 @@
 	</properties>
 
 	<dependencies>
+
+		<!--SHA dependecy-->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>20.0</version>
+		</dependency>
+
 		<!--  Prometheus: Prometheus için gerekli olacak -->
 		<!-- Prometheus:System %of Memoryconsumption ,of CPU consumption -->
 		<dependency>
