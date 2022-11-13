@@ -3,6 +3,13 @@ package com.hamitmizrak.collectionsx;
 import lombok.Getter;
 import lombok.Setter;
 
+//OOP
+// interface
+// inheritance
+// abstract
+// ATM project (Collections, static, io)
+
+
 public class GenericsDynamics <T> {
     @Getter @Setter
     private T number;
