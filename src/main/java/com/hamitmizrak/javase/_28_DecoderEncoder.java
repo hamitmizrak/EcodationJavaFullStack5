@@ -15,7 +15,7 @@ public class _28_DecoderEncoder {
     }
     //Encoder(Şifreleme)
     private static String encoderData(String value){
-        Base64.Encoder encoder= Base64.getEncoder();
+        java.util.Base64.Encoder encoder= java.util.Base64.getEncoder();
         String encrypted=encoder.encodeToString(value.getBytes());
         return  encrypted;
     }
@@ -23,7 +23,7 @@ public class _28_DecoderEncoder {
     // Decoder(Şifre Çöz)
     // String asd="merhabalar";  String asd=new String(); arasındaki fark nedir ?
     private static String decoderData(String value){
-        Base64.Decoder decoder= Base64.getDecoder();
+        java.util.Base64.Decoder decoder= java.util.Base64.getDecoder();
         String solved=new String(decoder.decode(value));
         return solved;
     }
