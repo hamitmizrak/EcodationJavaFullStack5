@@ -14,6 +14,7 @@ public class ListTutorials {
         listem.add("izmir");
         listem.add("malatya");
         listem.add("elazığ");
+        System.out.println(listem.isEmpty());
         /*System.out.println(listem.get(0));
         System.out.println(listem.size());
         listem.remove(0);

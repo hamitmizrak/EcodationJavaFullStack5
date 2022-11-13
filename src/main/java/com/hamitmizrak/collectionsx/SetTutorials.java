@@ -13,6 +13,7 @@ public class SetTutorials {
         listem.add("malatya");
         listem.add("elazığ");
 
+
         listem.forEach((temp)-> System.out.print(temp+" "));
 
     }
