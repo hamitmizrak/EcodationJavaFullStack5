@@ -101,9 +101,9 @@ public class BankBranchController implements IAtm, Serializable {
                     break;
                 case 6:
                     System.out.println("\n### Mail Gönder ###");
-                    Scanner klavye=new Scanner(System.in);
+                    Scanner klavye = new Scanner(System.in);
                     System.out.println("Mail adresinizi giriniz");
-                    String mailAddress=klavye.nextLine();
+                    String mailAddress = klavye.nextLine();
                     mailSend(mailAddress);
                     break;
                 case 7:
@@ -125,31 +125,43 @@ public class BankBranchController implements IAtm, Serializable {
     //para ekle
     @Override
     public void addMoney() {
-
+        Scanner klavye = new Scanner(System.in);
+        System.out.println("miktar giriniz");
+        int moneyAmount = klavye.nextInt();
+        //Database
     }//addMoney
 
     //para göster
     @Override
     public void showMoney() {
-
-    }//showMoney
+        //Database
+    }// end showMoney
 
     //para çek
     @Override
     public void reduceMoney() {
-
+        Scanner klavye = new Scanner(System.in);
+        System.out.println("çekilecek para miktar giriniz");
+        int moneyAmount = klavye.nextInt();
+        //Database
     }// end reduceMoney
 
     //Havale gönder
     @Override
     public void sendTransactionMoney() {
-
-    } //end sendTransactionMoney
+        Scanner klavye = new Scanner(System.in);
+        System.out.println("gönderilecek havale miktarını giriniz");
+        int moneyAmount = klavye.nextInt();
+        //Database
+    } // end sendTransactionMoney
 
     //Eft Gönder
     @Override
     public void sendEFTMoney() {
-
+        Scanner klavye = new Scanner(System.in);
+        System.out.println("gönderilecek eft miktarını giriniz");
+        int moneyAmount = klavye.nextInt();
+        //Database
     } //sendEFTMoney
 
     //Mail Gönder
@@ -159,7 +171,7 @@ public class BankBranchController implements IAtm, Serializable {
     } //end mailSend
 
     @Override
-    public void logout(){
+    public void logout() {
         System.exit(0);
     }
 }
