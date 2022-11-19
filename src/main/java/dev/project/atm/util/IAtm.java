@@ -4,8 +4,17 @@ package dev.project.atm.util;
 // Dummy Code: interface kullanmayacağız başka classlara implement edeceğimiz gövdesiz metotlardır.
 public interface IAtm {
 
+    //user data
+    int userScannerValue();
+
     //login
     boolean isLogin();
+
+    //register
+    void register();
+
+    // bütün metotlar
+    void allProcess();
 
     // para ekle
      void addMoney();
@@ -24,4 +33,7 @@ public interface IAtm {
 
     // Mail Göndermek
      void mailSend(String emailAddress);
+
+     //logout
+    void logout();
 }

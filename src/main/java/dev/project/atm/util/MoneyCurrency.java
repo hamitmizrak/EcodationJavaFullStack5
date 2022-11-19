@@ -1,4 +1,4 @@
-package dev.project.atm.safe;
+package dev.project.atm.util;
 
 // Java 5 ile gelmiş ,
 // Type Safe(Tür güvenliği) sağlamak

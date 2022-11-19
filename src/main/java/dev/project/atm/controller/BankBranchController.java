@@ -12,12 +12,13 @@ public class BankBranchController implements IAtm, Serializable {
     public static final long serialVersionUID = 1L;
 
     //Metotlar
-    public String scannerValue() {
+    @Override
+    public int userScannerValue() {
         Scanner klavye = new Scanner(System.in);
         System.out.println("Lütfen seçim yapınız");
         System.out.println("1-)Para Görüntüle\n2-)Para Yatır\n3-)Para çek\n4-)Eft Gönder" +
                 "\5-)Havale Gönder\6-)Mail Gönder\7-)Müşteri Hizmetleri\n8-) Çıkış");
-        return klavye.nextLine();
+        return klavye.nextInt();
     }
 
     //login
@@ -64,39 +65,101 @@ public class BankBranchController implements IAtm, Serializable {
         return result;
     }//end isLogin
 
+    @Override
+    public void register() {
+        //register işlemleri
+        System.out.println("Regsiter sayfası");
+
+        //
+        allProcess();
+    }
+
+    @Override
+    public void allProcess() {
+        if (isLogin()) {
+            int userValue = userScannerValue();
+            switch (userValue) {
+                case 1:
+                    System.out.println("\n### Para Görüntüle ###");
+                    showMoney();
+                    break;
+                case 2:
+                    System.out.println("\n### Para Yatır ###");
+                    addMoney();
+                    break;
+                case 3:
+                    System.out.println("\n### Para Çek ###");
+                    reduceMoney();
+                    break;
+                case 4:
+                    System.out.println("\n### EFT ###");
+                    sendEFTMoney();
+                    break;
+                case 5:
+                    System.out.println("\n### Havale ###");
+                    sendTransactionMoney();
+                    break;
+                case 6:
+                    System.out.println("\n### Mail Gönder ###");
+                    Scanner klavye=new Scanner(System.in);
+                    System.out.println("Mail adresinizi giriniz");
+                    String mailAddress=klavye.nextLine();
+                    mailSend(mailAddress);
+                    break;
+                case 7:
+                    System.out.println("\n### Müşteri Hizmetleri ###");
+                    break;
+                case 8:
+                    System.out.println("\n### ÇIKIŞ ###");
+                    showMoney();
+                    break;
+            }
+
+        } else {
+            System.out.println("Öncelikle Register olmalısınız");
+            register();
+        }
+    }
+
+
     //para ekle
     @Override
     public void addMoney() {
 
-    }
+    }//addMoney
 
     //para göster
     @Override
     public void showMoney() {
 
-    }
+    }//showMoney
 
     //para çek
     @Override
     public void reduceMoney() {
 
-    }
+    }// end reduceMoney
 
     //Havale gönder
     @Override
     public void sendTransactionMoney() {
 
-    }
+    } //end sendTransactionMoney
 
     //Eft Gönder
     @Override
     public void sendEFTMoney() {
 
-    }
+    } //sendEFTMoney
 
     //Mail Gönder
     @Override
     public void mailSend(String emailAddress) {
+        System.out.println("Mailiniz Gönderildi ...");
+    } //end mailSend
 
+    @Override
+    public void logout(){
+        System.exit(0);
     }
 }
