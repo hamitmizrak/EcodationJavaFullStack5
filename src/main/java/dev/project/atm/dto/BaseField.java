@@ -10,8 +10,8 @@ import java.util.Locale;
 @Data
 abstract public class BaseField {
     //field
-    private Long id;
-    private String date;
+    protected Long id;
+    protected String date;
 
     // constructorda: overloading yaptık
     //parametresiz constructor

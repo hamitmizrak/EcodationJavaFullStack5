@@ -26,13 +26,18 @@ public class EftDto extends BaseField {
     }
 
     //toString
+
+
     @Override
     public String toString() {
         return "EftDto{" +
                 "eftName='" + eftName + '\'' +
                 ", eftAmount='" + eftAmount + '\'' +
+                ", id=" + id +
+                ", date='" + date + '\'' +
                 "} " + super.toString();
     }
+
     //my special diffent codes
     public void specialCode(){
         System.out.println(new EftDto().hashCode());

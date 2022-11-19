@@ -18,7 +18,7 @@ public class TransactionDto extends BaseField {
     public TransactionDto() {
     }
 
-    //parametresiz constructor
+    //parametreli constructor
     public TransactionDto(Long id, String transactionName, String transactionAmount) {
         super(id);
         this.transactionName=transactionName;
@@ -26,13 +26,18 @@ public class TransactionDto extends BaseField {
     }
 
     //toString
+
+
     @Override
     public String toString() {
         return "TransactionDto{" +
                 "transactionName='" + transactionName + '\'' +
                 ", transactionAmount='" + transactionAmount + '\'' +
+                ", id=" + id +
+                ", date='" + date + '\'' +
                 "} " + super.toString();
     }
+
     //my special diffent codes
     public void specialCode(){
         System.out.println(new TransactionDto().hashCode());
