@@ -12,14 +12,6 @@ public class BankBranchController implements IAtm, Serializable {
     public static final long serialVersionUID = 1L;
 
     //Metotlar
-    @Override
-    public int userScannerValue() {
-        Scanner klavye = new Scanner(System.in);
-        System.out.println("Lütfen seçim yapınız");
-        System.out.println("1-)Para Görüntüle\n2-)Para Yatır\n3-)Para çek\n4-)Eft Gönder" +
-                "\5-)Havale Gönder\6-)Mail Gönder\7-)Müşteri Hizmetleri\n8-) Çıkış");
-        return klavye.nextInt();
-    }
 
     //login
     @Override
@@ -49,6 +41,8 @@ public class BankBranchController implements IAtm, Serializable {
                 passwordMask += "*";
             }
             System.out.println("Şifrenizin maskelenmiş hali: " + passwordMask);
+
+            //contional Login
             if (userName.equals(dbUser) && userPassword.equals(dbPassword)) {
                 System.out.println("Kullanıcı verileriniz doğrudur");
                 result = true;
@@ -58,22 +52,38 @@ public class BankBranchController implements IAtm, Serializable {
                 System.out.println("Kalan hakkınız: " + attempt);
                 if (attempt == 0) {
                     System.out.println("Hakkınız kalmadı Kartınız bloke oldu Müşteri hizmetrelini aramak ister misiniz ? 111 222 3344");
-                    break;
+                    logout();
+                    //break;
                 }
             }
         } //end attempt
         return result;
     }//end isLogin
 
+    // REGISTER
     @Override
     public void register() {
         //register işlemleri
-        System.out.println("Regsiter sayfası");
+        System.out.println("Register sayfası");
 
-        //
+        //regsiter işleminden sonrasında tekrar Bütün metotlara gitsin
         allProcess();
     }
 
+    //user data Scanner
+    @Override
+    public int userScannerValue() {
+        Scanner klavye = new Scanner(System.in);
+        System.out.println("Lütfen seçim yapınız");
+        System.out.println("1-)Para Görüntüle\n2-)Para Yatır\n3-)Para çek\n4-)Eft Gönder" +
+                "\5-)Havale Gönder\6-)Mail Gönder\7-)Müşteri Hizmetleri\n8-) Çıkış");
+        return klavye.nextInt();
+    }
+
+    // ###############################################################################################################
+    // ###############################################################################################################
+
+    // BÜTÜN METOTLAR
     @Override
     public void allProcess() {
         if (isLogin()) {
@@ -111,10 +121,9 @@ public class BankBranchController implements IAtm, Serializable {
                     break;
                 case 8:
                     System.out.println("\n### ÇIKIŞ ###");
-                    showMoney();
+                    logout();
                     break;
-            }
-
+            } //end switch
         } else {
             System.out.println("Öncelikle Register olmalısınız");
             register();
@@ -170,6 +179,7 @@ public class BankBranchController implements IAtm, Serializable {
         System.out.println("Mailiniz Gönderildi ...");
     } //end mailSend
 
+    //LOGOUT
     @Override
     public void logout() {
         System.exit(0);

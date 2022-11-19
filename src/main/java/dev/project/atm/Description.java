@@ -1,4 +1,4 @@
-package dev.project;
+package dev.project.atm;
 
 public class Description {
     /*

@@ -4,11 +4,10 @@ import dev.project.atm.util.BaseField;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
+//Lombok
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
 public class RegisterDto extends BaseField {
 
@@ -32,7 +31,6 @@ public class RegisterDto extends BaseField {
     }
 
     //toString
-
     @Override
     public String toString() {
         return "RegisterDto{" +

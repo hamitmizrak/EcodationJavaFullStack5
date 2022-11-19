@@ -8,6 +8,7 @@ import dev.project.atm.util.BaseField;
 import lombok.Data;
 
 //lombok
+//HAVALE
 @Data
 public class TransactionDto extends BaseField {
 

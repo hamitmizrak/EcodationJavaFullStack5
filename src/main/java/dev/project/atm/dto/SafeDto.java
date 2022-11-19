@@ -12,6 +12,7 @@ public class SafeDto extends BaseField {
     private String moneyType;
     // para birimi
     private String moneyCurrency;
+    //para miktarı
     private double moneyAmount;
 
     //parametresiz constructor
@@ -27,6 +28,7 @@ public class SafeDto extends BaseField {
         this.moneyAmount = moneyAmount;
     }
 
+    //toString
     @Override
     public String toString() {
         return "SafeDto{" +

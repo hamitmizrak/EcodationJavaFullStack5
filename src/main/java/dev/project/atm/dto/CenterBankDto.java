@@ -10,6 +10,7 @@ import lombok.Data;
 @Data
 public class CenterBankDto extends BaseField {
 
+    //field
     private String centerBankName;
     private String centerCityName;
     private String centerCityLogo;

@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
 public class LoginDto extends BaseField {
 
@@ -27,6 +26,7 @@ public class LoginDto extends BaseField {
         this.password = password;
     }
 
+    //toString
     @Override
     public String toString() {
         return "LoginDto{" +

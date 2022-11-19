@@ -1,7 +1,8 @@
 package dev.project.atm.util;
 
 // interface [ Access-Modifier(public-friendly) ve static field verebiliriz. )
-// Dummy Code: interface kullanmayacağız başka classlara implement edeceğimiz gövdesiz metotlardır.
+// NOT: interface Java8 beraber gövdeli metotda yazabiliyoruz.
+// Dummy Code : interface kullanmayacağız başka classlara implement edeceğimiz gövdesiz metotlardır.
 public interface IAtm {
 
     //user data
