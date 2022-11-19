@@ -4,21 +4,24 @@ package dev.project.atm.util;
 // Dummy Code: interface kullanmayacağız başka classlara implement edeceğimiz gövdesiz metotlardır.
 public interface IAtm {
 
+    //login
+    boolean isLogin();
+
     // para ekle
-    public void addMoney();
+     void addMoney();
 
     // para görüntüle
-    public void showMoney();
+     void showMoney();
 
     // para çekmek
-    public void reduceMoney();
+     void reduceMoney();
 
     // Havale yapmak
-    public void sendTransactionMoney();
+     void sendTransactionMoney();
 
     // EFT yapmak
-    public void sendEFTMoney();
+     void sendEFTMoney();
 
     // Mail Göndermek
-    public void mailSend(String emailAddress);
+     void mailSend(String emailAddress);
 }

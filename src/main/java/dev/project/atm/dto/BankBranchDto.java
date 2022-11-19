@@ -7,7 +7,7 @@ import dev.project.atm.util.BaseField;
 import lombok.Data;
 
 import java.util.List;
-
+//S-OLID
 //lombok
 @Data
 public class BankBranchDto  extends BaseField {

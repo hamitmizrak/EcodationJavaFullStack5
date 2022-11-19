@@ -1,4 +1,4 @@
-package dev.project.atm.login;
+package dev.project.atm.util;
 
 public class RegisterStaticData {
     //web sayfası(username,password) ve ATM ekranında(password)
