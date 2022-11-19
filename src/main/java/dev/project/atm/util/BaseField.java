@@ -1,4 +1,4 @@
-package dev.project.atm.dto;
+package dev.project.atm.util;
 
 import lombok.Data;
 

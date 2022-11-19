@@ -3,6 +3,7 @@ package dev.project.atm.dto;
 
 // Merkez: CenterBankDto(1)  - Şubeler BankBranchDto(N)
 
+import dev.project.atm.util.BaseField;
 import lombok.Data;
 
 import java.util.List;

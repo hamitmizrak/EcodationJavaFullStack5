@@ -1,4 +1,4 @@
-package dev.project.atm.dto;
+package dev.project.atm.util;
 
 // interface [ Access-Modifier(public-friendly) ve static field verebiliriz. )
 // Dummy Code: interface kullanmayacağız başka classlara implement edeceğimiz gövdesiz metotlardır.

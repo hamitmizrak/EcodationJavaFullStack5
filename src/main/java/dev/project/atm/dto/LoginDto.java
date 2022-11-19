@@ -1,5 +1,6 @@
 package dev.project.atm.dto;
 
+import dev.project.atm.util.BaseField;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class LoginDto extends  BaseField{
+public class LoginDto extends BaseField {
 
     //field
     private String emailAddress;

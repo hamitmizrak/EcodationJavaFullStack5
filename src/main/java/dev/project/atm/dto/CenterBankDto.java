@@ -3,6 +3,7 @@ package dev.project.atm.dto;
 
 // Merkez: CenterBankDto(1)  - Şubeler BankBranchDto(N)
 
+import dev.project.atm.util.BaseField;
 import lombok.Data;
 
 //lombok
@@ -12,7 +13,7 @@ public class CenterBankDto extends BaseField {
     private String centerBankName;
     private String centerCityName;
     private String centerCityLogo;
-    private boolean bankCheck;
+    private boolean bankCheck=false;
 
     //composition
 
