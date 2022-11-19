@@ -24,6 +24,7 @@ public class EftDto extends BaseField {
         this.eftName=eftName;
         this.eftAmount=eftAmount;
     }
+
     //toString
     @Override
     public String toString() {
