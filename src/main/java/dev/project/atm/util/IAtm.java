@@ -4,37 +4,37 @@ package dev.project.atm.util;
 // NOT: interface Java8 beraber gövdeli metotda yazabiliyoruz.
 // Dummy Code : interface kullanmayacağız başka classlara implement edeceğimiz gövdesiz metotlardır.
 public interface IAtm {
-
-    //user data
-    int userScannerValue();
-
     //login
     boolean isLogin();
 
     //register
     void register();
 
+    //user data
+    int userScannerValue();
+
     // bütün metotlar
     void allProcess();
 
     // para ekle
-     void addMoney();
+    void addMoney();
 
     // para görüntüle
-     void showMoney();
+    void showMoney();
 
     // para çekmek
-     void reduceMoney();
+    void reduceMoney();
 
     // Havale yapmak
-     void sendTransactionMoney();
+    void sendTransactionMoney();
 
     // EFT yapmak
-     void sendEFTMoney();
+    void sendEFTMoney();
 
     // Mail Göndermek
-     void mailSend(String emailAddress);
+    void mailSend(String emailAddress);
 
-     //logout
+    //logout
     void logout();
 }
+
