@@ -4,7 +4,7 @@ package dev.project.atm.dto;
 // Classlarda sadece 1 tane public vardır.
 // Javada classlarda sadece 1 tane extends kullanabilirsiniz.
 
-import dev.project.atm.util.BaseField;
+import dev.project.atm.utils.BaseField;
 import lombok.Data;
 
 //lombok

@@ -1,10 +1,9 @@
 package dev.project.atm.dto;
 
-import dev.project.atm.util.BaseField;
+import dev.project.atm.utils.BaseField;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor

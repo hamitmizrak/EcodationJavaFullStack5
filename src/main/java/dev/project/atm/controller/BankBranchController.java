@@ -1,7 +1,7 @@
 package dev.project.atm.controller;
 
-import dev.project.atm.util.IAtm;
-import dev.project.atm.util.RegisterStaticData;
+import dev.project.atm.utils.IAtm;
+import dev.project.atm.utils.RegisterStaticData;
 
 import java.io.Serializable;
 import java.util.Scanner;

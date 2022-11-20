@@ -1,4 +1,4 @@
-package dev.project.atm.util;
+package dev.project.atm.utils;
 
 // interface [ Access-Modifier(public-friendly) ve static field verebiliriz. )
 // NOT: interface Java8 beraber gövdeli metotda yazabiliyoruz.
