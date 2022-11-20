@@ -1,5 +1,9 @@
 package dev.project.atm.sql;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
 abstract public class DatabaseInformation {
 
     //RDBMS connection
