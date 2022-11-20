@@ -1,5 +1,7 @@
 package dev.project.atm.controller;
 
+import dev.project.atm.dao.BankBranchDao;
+import dev.project.atm.dto.SafeDto;
 import dev.project.atm.utils.IAtm;
 import dev.project.atm.utils.RegisterStaticData;
 
@@ -11,6 +13,14 @@ public class BankBranchController implements IAtm, Serializable {
     // serialVersionUID
     public static final long serialVersionUID = 1L;
 
+    private BankBranchDao bankBranchDao;
+    SafeDto safeDto;
+
+    //parametresiz constructor
+    public BankBranchController() {
+        bankBranchDao=new BankBranchDao();
+        safeDto=new SafeDto();
+    }
     //Metotlar
 
     //login
@@ -135,8 +145,22 @@ public class BankBranchController implements IAtm, Serializable {
     @Override
     public void addMoney() {
         Scanner klavye = new Scanner(System.in);
+        String moneyType,moneyCurrency;
+        int moneyAmount;
+
+        System.out.println("para türünü giriniz");
+        moneyType=klavye.nextLine();
+        System.out.println("para birimi giriniz");
+        moneyCurrency=klavye.nextLine();
         System.out.println("miktar giriniz");
-        int moneyAmount = klavye.nextInt();
+        moneyAmount = klavye.nextInt();
+
+        SafeDto safeDto=new SafeDto();
+        safeDto.setMoneyAmount(moneyAmount);
+        safeDto.setMoneyType(moneyType);
+        safeDto.setMoneyCurrency(moneyCurrency);
+        bankBranchDao.create(safeDto);
+
         //Database
     }//addMoney
 

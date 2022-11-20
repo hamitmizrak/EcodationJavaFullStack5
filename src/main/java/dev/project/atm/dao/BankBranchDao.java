@@ -3,11 +3,16 @@ package dev.project.atm.dao;
 import dev.project.atm.dto.SafeDto;
 import dev.project.atm.sql.IDaoConnection;
 
+import javax.xml.transform.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class BankBranchDao implements IDaoConnection<SafeDto> {
+
+    //executeUpdate ==> Create, Update
+    //executeQuery  ==> Query
 
     //CREATE
     @Override
@@ -34,27 +39,93 @@ public class BankBranchDao implements IDaoConnection<SafeDto> {
     //LIST
     @Override
     public ArrayList<SafeDto> list() {
-        return null;
+        ArrayList<SafeDto> listSafeDto=new ArrayList<>();
+        SafeDto safeDto=new SafeDto();
+        try (Connection connection = getInterfaceConnection()) {
+            //insert sql
+            String sql = "select * from safe";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet=preparedStatement.executeQuery();
+            while(resultSet.next()){
+                safeDto.setId(resultSet.getLong("id"));
+                safeDto.setMoneyType(resultSet.getString("money_type"));
+                safeDto.setMoneyCurrency(resultSet.getString("money_currency"));
+                safeDto.setMoneyAmount(resultSet.getDouble("money_amount"));
+                safeDto.setDate(resultSet.getString("created_date"));
+                listSafeDto.add(safeDto);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return listSafeDto;
     }
 
     //UPDATE
     @Override
     public void update(SafeDto safeDto) {
+        try (Connection connection = getInterfaceConnection()) {
+            //insert sql
+            String sql = "update safe set money_type=? , money_currency=? , money_amount=? where id=?;";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, safeDto.getMoneyType());
+            preparedStatement.setString(2, safeDto.getMoneyCurrency());
+            preparedStatement.setDouble(3, safeDto.getMoneyAmount());
+            preparedStatement.setLong(4, safeDto.getId());
+
+            //effected
+            int rowEffected = preparedStatement.executeUpdate();
+            if (rowEffected > 0)
+                System.out.println(SafeDto.class + " güncelleme başarılı");
+            else
+                System.out.println(SafeDto.class + " güncelleme başarısız !!!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
     //DELETE
     @Override
     public void delete(SafeDto safeDto) {
+        try (Connection connection = getInterfaceConnection()) {
+            //insert sql
+            String sql = "delete from safe where id=?;";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setLong(1, safeDto.getId());
 
+            //effected
+            int rowEffected = preparedStatement.executeUpdate();
+            if (rowEffected > 0)
+                System.out.println(SafeDto.class + " silme başarılı");
+            else
+                System.out.println(SafeDto.class + " silme başarısız !!!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
         BankBranchDao bankBranchDao=new BankBranchDao();
         SafeDto safeDto=new SafeDto();
-        safeDto.setMoneyAmount(2000);
-        safeDto.setMoneyType("kağıt");
-        safeDto.setMoneyCurrency("lira");
-        bankBranchDao.create(safeDto);
+        safeDto.setId(2L);
+        safeDto.setMoneyAmount(1111);
+        safeDto.setMoneyType("kağıt11");
+        safeDto.setMoneyCurrency("lira11");
+
+        //INSERT
+        //bankBranchDao.create(safeDto);
+
+         //LIST
+        /*for (SafeDto safeDto1: bankBranchDao.list()) {
+            System.out.println(safeDto1);
+        }*/
+
+        //UPDATE
+        //bankBranchDao.update(safeDto);
+
+        //DELETE
+        //bankBranchDao.delete(safeDto);
+
+
     }
 }
