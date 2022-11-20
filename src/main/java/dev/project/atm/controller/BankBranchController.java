@@ -5,7 +5,10 @@ import dev.project.atm.dto.SafeDto;
 import dev.project.atm.utils.IAtm;
 import dev.project.atm.utils.RegisterStaticData;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Scanner;
 
 public class BankBranchController implements IAtm, Serializable {
@@ -14,14 +17,25 @@ public class BankBranchController implements IAtm, Serializable {
     public static final long serialVersionUID = 1L;
 
     private BankBranchDao bankBranchDao;
-    SafeDto safeDto;
+    private SafeDto safeDto;
+
+    private static final String URL = "C:\\io\\ecodation\\safe.txt";
 
     //parametresiz constructor
     public BankBranchController() {
-        bankBranchDao=new BankBranchDao();
-        safeDto=new SafeDto();
+        bankBranchDao = new BankBranchDao();
+        safeDto = new SafeDto();
     }
     //Metotlar
+
+    private void safeFileWriter(SafeDto safeDto) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(URL, true))) {
+            bufferedWriter.write(new Date(System.currentTimeMillis()) + " " + safeDto + "\n");
+            bufferedWriter.flush();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
 
     //login
     @Override
@@ -84,9 +98,9 @@ public class BankBranchController implements IAtm, Serializable {
     @Override
     public int userScannerValue() {
         Scanner klavye = new Scanner(System.in);
-        System.out.println("Lütfen seçim yapınız");
+        System.out.println("\nLütfen seçim yapınız");
         System.out.println("1-)Para Görüntüle\n2-)Para Yatır\n3-)Para çek\n4-)Eft Gönder" +
-                "\5-)Havale Gönder\6-)Mail Gönder\7-)Müşteri Hizmetleri\n8-) Çıkış");
+                "\n5-)Havale Gönder\n6-)Mail Gönder\n7-)Müşteri Hizmetleri\n8-) Çıkış");
         return klavye.nextInt();
     }
 
@@ -96,48 +110,49 @@ public class BankBranchController implements IAtm, Serializable {
     // BÜTÜN METOTLAR
     @Override
     public void allProcess() {
-        if (isLogin()) {
-            int userValue = userScannerValue();
-            switch (userValue) {
-                case 1:
-                    System.out.println("\n### Para Görüntüle ###");
-                    showMoney();
-                    break;
-                case 2:
-                    System.out.println("\n### Para Yatır ###");
-                    addMoney();
-                    break;
-                case 3:
-                    System.out.println("\n### Para Çek ###");
-                    reduceMoney();
-                    break;
-                case 4:
-                    System.out.println("\n### EFT ###");
-                    sendEFTMoney();
-                    break;
-                case 5:
-                    System.out.println("\n### Havale ###");
-                    sendTransactionMoney();
-                    break;
-                case 6:
-                    System.out.println("\n### Mail Gönder ###");
-                    Scanner klavye = new Scanner(System.in);
-                    System.out.println("Mail adresinizi giriniz");
-                    String mailAddress = klavye.nextLine();
-                    mailSend(mailAddress);
-                    break;
-                case 7:
-                    System.out.println("\n### Müşteri Hizmetleri ###");
-                    break;
-                case 8:
-                    System.out.println("\n### ÇIKIŞ ###");
-                    logout();
-                    break;
-            } //end switch
+        int userValue = userScannerValue();
+        switch (userValue) {
+            case 1:
+                System.out.println("\n### Para Görüntüle ###");
+                showMoney();
+                break;
+            case 2:
+                System.out.println("\n### Para Yatır ###");
+                addMoney();
+                break;
+            case 3:
+                System.out.println("\n### Para Çek ###");
+                reduceMoney();
+                break;
+            case 4:
+                System.out.println("\n### EFT ###");
+                sendEFTMoney();
+                break;
+            case 5:
+                System.out.println("\n### Havale ###");
+                sendTransactionMoney();
+                break;
+            case 6:
+                System.out.println("\n### Mail Gönder ###");
+                Scanner klavye = new Scanner(System.in);
+                System.out.println("Mail adresinizi giriniz");
+                String mailAddress = klavye.nextLine();
+                mailSend(mailAddress);
+                break;
+            case 7:
+                System.out.println("\n### Müşteri Hizmetleri ###");
+                break;
+            case 8:
+                System.out.println("\n### ÇIKIŞ ###");
+                logout();
+                break;
+        } //end switch
+
+       /* if (isLogin()) {
         } else {
             System.out.println("Öncelikle Register olmalısınız");
             register();
-        }
+        }*/
     }
 
 
@@ -145,21 +160,23 @@ public class BankBranchController implements IAtm, Serializable {
     @Override
     public void addMoney() {
         Scanner klavye = new Scanner(System.in);
-        String moneyType,moneyCurrency;
+        String moneyType, moneyCurrency;
         int moneyAmount;
 
         System.out.println("para türünü giriniz");
-        moneyType=klavye.nextLine();
+        moneyType = klavye.nextLine();
         System.out.println("para birimi giriniz");
-        moneyCurrency=klavye.nextLine();
+        moneyCurrency = klavye.nextLine();
         System.out.println("miktar giriniz");
         moneyAmount = klavye.nextInt();
 
-        SafeDto safeDto=new SafeDto();
+        SafeDto safeDto = new SafeDto();
         safeDto.setMoneyAmount(moneyAmount);
         safeDto.setMoneyType(moneyType);
         safeDto.setMoneyCurrency(moneyCurrency);
         bankBranchDao.create(safeDto);
+
+        safeFileWriter(safeDto);
 
         //Database
     }//addMoney
@@ -168,15 +185,41 @@ public class BankBranchController implements IAtm, Serializable {
     @Override
     public void showMoney() {
         //Database
+        System.out.println("Toplam Para: " + bankBranchDao.sumAmount());
+        bankBranchDao.list();
     }// end showMoney
 
     //para çek
     @Override
     public void reduceMoney() {
+        //Dikkat:
+        // 1-) negatif sayı vermezsiniz ?
+        // 2-) Toplam miktardan büyük para çekemeyiz ?
+        // 3-) Günlük çekme miktarı en fazla 5000TL olabilir.
         Scanner klavye = new Scanner(System.in);
+        showMoney();
+        System.out.println("Hangi hesabınızdaki id ile para çekeceksiniz");
+        long id = klavye.nextLong();
+
         System.out.println("çekilecek para miktar giriniz");
-        int moneyAmount = klavye.nextInt();
-        //Database
+        double moneyAmount = klavye.nextDouble();
+       /* if(moneyAmount<0){
+
+        }else if(){
+
+        }else if(){
+
+        }*/
+
+        SafeDto safeDto = new SafeDto();
+        safeDto.setId(id);
+        safeDto.setMoneyAmount(moneyAmount);
+        safeDto.setMoneyType("tr");
+        safeDto.setMoneyCurrency("tr");
+        bankBranchDao.update(safeDto);
+
+        //Ödev ? delete ile yapalım ?
+        System.out.println("Kalan Toplam Para: " + bankBranchDao.sumAmount());
     }// end reduceMoney
 
     //Havale gönder

@@ -22,9 +22,9 @@ public class DatabaseConnection extends DatabaseInformation {
     private DatabaseConnection() throws HamitMizrakException {
         try {
             Class.forName(this.forNameData);
-            System.out.println("Driver Başrıyla yüklendi");
+            //System.out.println("Driver Başrıyla yüklendi");
             connection = DriverManager.getConnection(url, user, password);
-            System.out.println("Bağlantı başarılı");
+            //System.out.println("Bağlantı başarılı");
         } catch (Exception e) {
             e.printStackTrace();
             throw new HamitMizrakException(" SQl Failed: " + e);

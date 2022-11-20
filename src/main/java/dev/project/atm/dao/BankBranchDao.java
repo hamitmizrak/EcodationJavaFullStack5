@@ -39,6 +39,35 @@ public class BankBranchDao implements IDaoConnection<SafeDto> {
     //LIST
     @Override
     public ArrayList<SafeDto> list() {
+        ArrayList<SafeDto> dtoArrayList=new ArrayList<>();
+        SafeDto safeDto;
+        try (Connection connection = getInterfaceConnection()) {
+            //insert sql
+            String sql = "select * from safe";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet=preparedStatement.executeQuery();
+            while(resultSet.next()){
+                safeDto=new SafeDto();
+                safeDto.setId(resultSet.getLong("id"));
+                safeDto.setMoneyType(resultSet.getString("money_type"));
+                safeDto.setMoneyCurrency(resultSet.getString("money_currency"));
+                safeDto.setMoneyAmount(resultSet.getDouble("money_amount"));
+                safeDto.setDate(resultSet.getString("created_date"));
+                dtoArrayList.add(safeDto);
+            }
+            for (SafeDto safeDto1: dtoArrayList) {
+                System.out.println(safeDto1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return dtoArrayList;
+    }
+
+    //SUM amount
+    //select sum(money_amount) as sum from safe;
+    public double sumAmount() {
+        double sumAmount=0;
         ArrayList<SafeDto> listSafeDto=new ArrayList<>();
         SafeDto safeDto=new SafeDto();
         try (Connection connection = getInterfaceConnection()) {
@@ -47,17 +76,15 @@ public class BankBranchDao implements IDaoConnection<SafeDto> {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet=preparedStatement.executeQuery();
             while(resultSet.next()){
-                safeDto.setId(resultSet.getLong("id"));
-                safeDto.setMoneyType(resultSet.getString("money_type"));
-                safeDto.setMoneyCurrency(resultSet.getString("money_currency"));
                 safeDto.setMoneyAmount(resultSet.getDouble("money_amount"));
-                safeDto.setDate(resultSet.getString("created_date"));
                 listSafeDto.add(safeDto);
+                sumAmount+= Double.valueOf(safeDto.getMoneyAmount());
             }
+            //System.out.println("Toplam Miktar: "+sumAmount);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return listSafeDto;
+        return sumAmount;
     }
 
     //UPDATE
@@ -119,6 +146,10 @@ public class BankBranchDao implements IDaoConnection<SafeDto> {
         /*for (SafeDto safeDto1: bankBranchDao.list()) {
             System.out.println(safeDto1);
         }*/
+
+        //Money Amount Sum
+        double sum= bankBranchDao.sumAmount();
+        System.out.println(sum);
 
         //UPDATE
         //bankBranchDao.update(safeDto);
