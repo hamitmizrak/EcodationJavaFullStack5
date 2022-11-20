@@ -52,7 +52,7 @@ public class DatabaseConnection extends DatabaseInformation {
         this.connection = connection;
     }
 
-    public static void main(String[] args) throws HamitMizrakException {
+    /*public static void main(String[] args) throws HamitMizrakException {
         DatabaseConnection databaseConnection=new DatabaseConnection();
-    }
+    }*/
 }
