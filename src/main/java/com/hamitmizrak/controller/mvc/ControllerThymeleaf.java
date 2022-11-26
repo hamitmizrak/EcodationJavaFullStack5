@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.UUID;
+
 @Controller
 @RequestMapping("/controller")
 public class ControllerThymeleaf {
@@ -44,5 +49,23 @@ public class ControllerThymeleaf {
         return "thymeleaf4";
     }
 
+
+    // http://localhost:8080/controller/thymeleaf5
+    @GetMapping("thymeleaf5")
+    public String thymeleaf5(Model model){
+        List<RegisterDto> registerDtoList=new ArrayList<>();
+        for (long i = 1; i <=10 ; i++) {
+            UUID uuid=UUID.randomUUID();
+            registerDtoList.add(RegisterDto.builder()
+                    .id(i)
+                    .name("adı "+i)
+                    .surname("soyadı "+i)
+                    .emailAddress("email@"+i)
+                    .createdDate(new Date(System.currentTimeMillis()))
+                    .password(uuid.toString()).build());
+        }
+        model.addAttribute("key_thymeleaf5",registerDtoList);
+        return "thymeleaf5";
+    }
 
 }
