@@ -24,6 +24,7 @@ public class BeanMvc {
         this.beanConfig = beanConfig;
     }*/
 
+    //3.YOL (Lombok)
     private final BeanConfig beanConfig;
 
     // http:localhost:8080/bean/beandto
