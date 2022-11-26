@@ -1,10 +1,11 @@
-package tutorials.atm.dto;
+package atm.dto;
 
 //İmportant:
 // Classlarda sadece 1 tane public vardır.
 // Javada classlarda sadece 1 tane extends kullanabilirsiniz.
 
-import tutorials.atm.util.BaseField;
+
+import atm.util.BaseField;
 import lombok.Data;
 
 //lombok
@@ -16,8 +17,7 @@ public class EftDto extends BaseField {
     private String eftAmount;
 
     //parametresiz constructor
-    public EftDto() {
-    }
+    public EftDto() {}
 
     //parametresiz constructor
     public EftDto(Long id, String eftName, String eftAmount) {
@@ -27,8 +27,6 @@ public class EftDto extends BaseField {
     }
 
     //toString
-
-
     @Override
     public String toString() {
         return "EftDto{" +
@@ -38,7 +36,6 @@ public class EftDto extends BaseField {
                 ", date='" + date + '\'' +
                 "} " + super.toString();
     }
-
     //my special diffent codes
     public void specialCode(){
         System.out.println(new EftDto().hashCode());

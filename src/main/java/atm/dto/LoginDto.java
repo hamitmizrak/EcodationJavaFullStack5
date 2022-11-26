@@ -1,6 +1,6 @@
-package tutorials.atm.dto;
+package atm.dto;
 
-import tutorials.atm.util.BaseField;
+import atm.util.BaseField;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,8 +15,7 @@ public class LoginDto extends BaseField {
     private String password;
 
     //parametresiz constructor
-    public LoginDto() {
-    }
+    public LoginDto() {}
 
     //parametreli constructor
     public LoginDto(Long id, String emailAddress, String password) {

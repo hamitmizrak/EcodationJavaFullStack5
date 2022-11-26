@@ -1,9 +1,7 @@
-package tutorials.atm.dto;
-
-
+package atm.dto;
 // Merkez: CenterBankDto(1)  - Şubeler BankBranchDto(N)
 
-import tutorials.atm.util.BaseField;
+import atm.util.BaseField;
 import lombok.Data;
 
 //lombok

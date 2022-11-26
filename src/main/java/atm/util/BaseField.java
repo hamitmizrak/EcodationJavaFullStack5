@@ -1,4 +1,4 @@
-package tutorials.atm.util;
+package atm.util;
 
 import lombok.Data;
 

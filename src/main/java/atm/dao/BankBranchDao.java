@@ -1,8 +1,9 @@
-package tutorials.atm.dao;
+package atm.dao;
 
-import tutorials.atm.dto.BankBranchDto;
-import tutorials.atm.dto.SafeDto;
-import tutorials.atm.sql.IDaoConnection;
+import atm.dto.BankBranchDto;
+import atm.dto.SafeDto;
+import atm.sql.IDaoConnection;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

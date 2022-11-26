@@ -1,6 +1,6 @@
-package tutorials.atm.dto;
+package atm.dto;
 
-import tutorials.atm.util.BaseField;
+import atm.util.BaseField;
 import lombok.Data;
 
 //lombok

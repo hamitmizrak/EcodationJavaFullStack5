@@ -1,4 +1,4 @@
-package tutorials.atm.sql;
+package atm.sql;
 
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -12,12 +12,10 @@ public interface IDaoConnection <T> {
     //SUM AMOUNT
     double sumAmount();
 
-
     double safeSpecialIdsumAmount(long id);
 
     public void update(T t);
     public void delete(T t);
-
 
     //Java 8 beraber gelen default interface
     default Connection getInterfaceConnection(){

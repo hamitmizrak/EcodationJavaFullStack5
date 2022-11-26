@@ -1,4 +1,4 @@
-package tutorials.atm.sql;
+package atm.sql;
 
 public class HamitMizrakException extends Exception {
     public HamitMizrakException(String message) {

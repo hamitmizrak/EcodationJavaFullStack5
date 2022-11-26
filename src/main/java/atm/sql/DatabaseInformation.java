@@ -1,4 +1,4 @@
-package tutorials.atm.sql;
+package atm.sql;
 
 import lombok.Getter;
 import lombok.Setter;

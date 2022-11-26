@@ -1,6 +1,7 @@
-package tutorials.atm;
+package atm;
 
-import tutorials.atm.controller.BankBranchController;
+
+import atm.controller.BankBranchController;
 
 public class MainClass {
 

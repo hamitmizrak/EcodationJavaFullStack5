@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 public class EcodationJavaFullStack5Application {
 
 	public static void main(String[] args) {
-		System.setProperty("spring.devtools.restart.enabled","true");
+		//System.setProperty("spring.devtools.restart.enabled","true");
 		System.setProperty("java.awt.headless", "false"); //Disables headless
 		SpringApplication.run(EcodationJavaFullStack5Application.class, args);
 	}

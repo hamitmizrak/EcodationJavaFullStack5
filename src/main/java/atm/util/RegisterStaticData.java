@@ -1,4 +1,4 @@
-package tutorials.atm.util;
+package atm.util;
 
 public class RegisterStaticData {
     //web sayfası(username,password) ve ATM ekranında(password)

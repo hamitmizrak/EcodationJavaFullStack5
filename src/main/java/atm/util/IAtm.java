@@ -1,4 +1,4 @@
-package tutorials.atm.util;
+package atm.util;
 
 // interface [ Access-Modifier(public-friendly) ve static field verebiliriz. )
 // NOT: interface Java8 beraber gövdeli metotda yazabiliyoruz.

@@ -1,9 +1,11 @@
-package tutorials.atm.controller;
+package atm.controller;
 
-import tutorials.atm.dao.BankBranchDao;
-import tutorials.atm.dto.SafeDto;
-import tutorials.atm.util.IAtm;
-import tutorials.atm.util.RegisterStaticData;
+
+
+import atm.dao.BankBranchDao;
+import atm.dto.SafeDto;
+import atm.util.IAtm;
+import atm.util.RegisterStaticData;
 
 import java.io.*;
 import java.util.Scanner;
@@ -128,14 +130,15 @@ public class BankBranchController implements IAtm, Serializable {
 
     //DECISION
     public void decision() {
-        while (true) {
+
             if (isLogin()) {
-                allProcess();
+                while (true) {
+                    allProcess();
+                }
             } else {
                 System.out.println("Öncelikle Register olmalısınız");
                 register();
             }
-        }
     }
 
     // BÜTÜN METOTLAR
@@ -251,8 +254,9 @@ public class BankBranchController implements IAtm, Serializable {
         } else if (moneyAmount > 5000) {
             System.out.println("5000TL üstünü çekemezsiniz");
             reduceMoney();
-
         }
+        //else if eğer bizim çekeceğimiz miktar toplam paradan büyükse
+
         //3-) Toplam paradan fazla çekemeyiz.
         if (moneyAmount > sumAmount) {
             System.out.println("Toplam paranız: " + sumAmount + " üstünde bir rakam çekemeyiz");

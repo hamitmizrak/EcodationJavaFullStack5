@@ -1,4 +1,6 @@
-package tutorials.atm.sql;
+package atm.sql;
+
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
