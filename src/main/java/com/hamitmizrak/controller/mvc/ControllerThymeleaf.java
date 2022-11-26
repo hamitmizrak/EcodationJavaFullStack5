@@ -11,27 +11,27 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/controller")
 public class ControllerThymeleaf {
 
-    // http://localhost:8080/thymeleaf1
+    // http://localhost:8080/controller/thymeleaf1
     @GetMapping("thymeleaf1")
     @ResponseBody
     public String thymeleaf1(){
         return "Thymeleaf1";
     }
 
-    // http://localhost:8080/thymeleaf2
+    // http://localhost:8080/controller/thymeleaf2
     @GetMapping("thymeleaf2")
     public String thymeleaf2(){
         return "thymeleaf2";
     }
 
-    // http://localhost:8080/thymeleaf3
+    // http://localhost:8080/controller/thymeleaf3
     @GetMapping("thymeleaf3")
     public String thymeleaf3(Model model){
         model.addAttribute("key_thymeleaf3","Ben javadan geldim");
         return "thymeleaf3";
     }
 
-    // http://localhost:8080/thymeleaf4
+    // http://localhost:8080/controller/thymeleaf4
     @GetMapping("thymeleaf4")
     public String thymeleaf4(Model model){
         RegisterDto registerDto=new RegisterDto();
