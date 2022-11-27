@@ -65,7 +65,6 @@ public class RegisterController {
         return "register/register_list";
     }
 
-
     // CREATE
     // http://localhost:8080/validation/create
     @GetMapping("/validation/create")

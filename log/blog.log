@@ -2390,3 +2390,43 @@ Field error in object 'key_register_validation' on field 'password': rejected va
 2022-11-27 12:50:14.499  INFO 6416 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-11-27 12:50:14.500  INFO 6416 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
 2022-11-27 12:50:28.120  INFO 6416 --- [http-nio-8080-exec-3] c.h.controller.mvc.RegisterController    : Success: RegisterDto(id=null, name=Hamit, surname=Mızrak, emailAddress=email@adress.com, password=Hm123456@, createdDate=null)
+2022-11-27 12:54:31.260  INFO 6416 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-27 12:54:31.262  INFO 6416 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-27 12:54:31.268  INFO 6416 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-27 12:54:37.248  INFO 4548 --- [restartedMain] c.h.EcodationJavaFullStack5Application   : Starting EcodationJavaFullStack5Application using Java 19 on DESKTOP-D7CGATS with PID 4548 (D:\spring\EcodationJavaFullStack5\target\classes started by hamit in D:\spring\EcodationJavaFullStack5)
+2022-11-27 12:54:37.250  INFO 4548 --- [restartedMain] c.h.EcodationJavaFullStack5Application   : No active profile set, falling back to 1 default profile: "default"
+2022-11-27 12:54:37.298  INFO 4548 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-27 12:54:37.298  INFO 4548 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-27 12:54:37.992  INFO 4548 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-27 12:54:38.045  INFO 4548 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 1 JPA repository interfaces.
+2022-11-27 12:54:38.584  INFO 4548 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-27 12:54:38.592  INFO 4548 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-27 12:54:38.593  INFO 4548 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-11-27 12:54:38.695  INFO 4548 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-27 12:54:38.695  INFO 4548 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1397 ms
+2022-11-27 12:54:38.733  INFO 4548 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-27 12:54:38.880  INFO 4548 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-27 12:54:38.889  INFO 4548 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/ecodation_blog?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false'
+2022-11-27 12:54:38.976  INFO 4548 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-27 12:54:39.031  INFO 4548 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-11-27 12:54:39.191  INFO 4548 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-27 12:54:39.282  INFO 4548 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-11-27 12:54:39.798  INFO 4548 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-27 12:54:39.805  INFO 4548 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-27 12:54:40.219  WARN 4548 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-27 12:54:40.387  INFO 4548 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-11-27 12:54:40.922  INFO 4548 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-27 12:54:40.956  INFO 4548 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-27 12:54:40.965  INFO 4548 --- [restartedMain] c.h.EcodationJavaFullStack5Application   : Started EcodationJavaFullStack5Application in 4.073 seconds (JVM running for 4.954)
+2022-11-27 12:54:45.926  INFO 4548 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-27 12:54:45.926  INFO 4548 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-27 12:54:45.928  INFO 4548 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-11-27 12:55:19.921 ERROR 4548 --- [http-nio-8080-exec-8] c.h.controller.mvc.RegisterController    : HATA: org.springframework.validation.BeanPropertyBindingResult: 5 errors
+Field error in object 'key_register_validation' on field 'emailAddress': rejected value []; codes [NotEmpty.key_register_validation.emailAddress,NotEmpty.emailAddress,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [key_register_validation.emailAddress,emailAddress]; arguments []; default message [emailAddress]]; default message [Email alan? bo? geçemezsiniz]
+Field error in object 'key_register_validation' on field 'password': rejected value []; codes [NotEmpty.key_register_validation.password,NotEmpty.password,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [key_register_validation.password,password]; arguments []; default message [password]]; default message [Sifre alan? bo? geçemezsiniz]
+Field error in object 'key_register_validation' on field 'password': rejected value []; codes [Size.key_register_validation.password,Size.password,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [key_register_validation.password,password]; arguments []; default message [password],20,7]; default message [Şifre en az 7 en fazla 20 olmalıdır.]
+Field error in object 'key_register_validation' on field 'name': rejected value []; codes [NotEmpty.key_register_validation.name,NotEmpty.name,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [key_register_validation.name,name]; arguments []; default message [name]]; default message [ad? alan? bo? geçemezsiniz]
+Field error in object 'key_register_validation' on field 'surname': rejected value []; codes [NotEmpty.key_register_validation.surname,NotEmpty.surname,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [key_register_validation.surname,surname]; arguments []; default message [surname]]; default message [soyad? alan? bo? geçemezsiniz]
+2022-11-27 12:56:04.970  INFO 4548 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-27 12:56:04.973  INFO 4548 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-27 12:56:04.992  INFO 4548 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
