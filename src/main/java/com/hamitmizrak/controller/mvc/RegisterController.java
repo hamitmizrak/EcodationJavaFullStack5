@@ -3,8 +3,12 @@ package com.hamitmizrak.controller.mvc;
 import com.hamitmizrak.bean.ModelMapperBean;
 import com.hamitmizrak.bean.PasswordEncodeBean;
 import com.hamitmizrak.business.dto.RegisterDto;
+import com.hamitmizrak.data.entity.RegisterEntity;
+import com.hamitmizrak.data.repository.IRegisterRepository;
+import com.hamitmizrak.exception.HamitMizrakException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -22,24 +26,56 @@ import java.util.UUID;
 
 //Controller
 @Controller
-@RequestMapping("/controller")
+//@RequestMapping("/controller")
 public class RegisterController {
 
     // Inject
     private final ModelMapperBean modelMapperBean;
     private final PasswordEncodeBean passwordEncodeBean;
+    private final IRegisterRepository repository;
+
+    //Speed Data
+    // http://localhost:8080/validation/speeddata
+    @GetMapping("/validation/speeddata")
+    public String createRegisterSpeedData(Model model){
+        int counter=1;
+        for (long i = 1; i <=5 ; i++) {
+            UUID uuid=UUID.randomUUID();
+            RegisterEntity registerEntity=RegisterEntity.builder()
+                    .name("adı "+i)
+                    .surname("soyadı "+i)
+                    .password(passwordEncodeBean.passwordEncoderMethod().encode(uuid.toString()))
+                    .emailAddress(uuid+"@deneme.com")
+                    .build();
+            repository.save(registerEntity);
+            counter++;
+        }
+        model.addAttribute("key_dataset",counter+" tane veri eklendi");
+        return "redirect:/register/list";
+    }
+
+    // LIST
+    // http://localhost:8080/register/list
+    @GetMapping("/register/list")
+    public String validationListRegister(Model model){
+       Iterable<RegisterEntity> list= repository.findAll();
+        model.addAttribute("register_list",list);
+        list.forEach((temp)-> {
+            System.out.println(temp);});
+        return "register/register_list";
+    }
 
 
     // CREATE
-    // http://localhost:8080/controller/register/create
-    @GetMapping("/register/create")
+    // http://localhost:8080/validation/create
+    @GetMapping("/validation/create")
     public String validationCreateGetRegister(Model model){
-        model.addAttribute("create_register",new RegisterDto());
+        model.addAttribute("key_register_validation",new RegisterDto());
         return "register/register_create";
     }
 
-    @PostMapping("/register/create")
-    public String validationCreatePostRegister(@Valid @ModelAttribute("create_register") RegisterDto registerDto, BindingResult bindingResult, Model model){
+    @PostMapping("/validation/create")
+    public String validationCreatePostRegister(@Valid @ModelAttribute("key_register_validation") RegisterDto registerDto, BindingResult bindingResult, Model model) throws HamitMizrakException {
         if(bindingResult.hasErrors()){
             log.error("HATA: "+bindingResult);
             return "register/register_create";
@@ -47,6 +83,12 @@ public class RegisterController {
         //DATABASE
         model.addAttribute("register_success","Kullanıcı kayıt edildi"+registerDto);
         log.info("Success: "+registerDto);
+        RegisterEntity registerEntity=modelMapperBean.modelMapperMethod().map(registerDto,RegisterEntity.class);
+        if(registerEntity!=null)
+          repository.save(registerEntity);
+        else {
+            throw new HamitMizrakException("Kayıt eklemenedi");
+        }
         return "redirect:/register/list";
     }
 
@@ -59,26 +101,7 @@ public class RegisterController {
      }
      */
 
-    // LIST
-    // http://localhost:8080/controller/register/list
-    @GetMapping("/register/list")
-    public String validationListRegister(Model model){
-        List<RegisterDto> registerDtoList=new ArrayList<>();
-        for (long i = 1; i <=10 ; i++) {
-            UUID uuid=UUID.randomUUID();
-            registerDtoList.add(RegisterDto.builder()
-                    .id(i)
-                    .name("adı "+i)
-                    .surname("soyadı "+i)
-                    .emailAddress("email@"+i)
-                    .createdDate(new Date(System.currentTimeMillis()))
-                    .password(uuid.toString()).build());
-        }
-        model.addAttribute("list_register",registerDtoList);
-        registerDtoList.forEach((temp)-> {
-            System.out.println(temp);});
-        return "register/register_list";
-    }
+
 
     // FIND
     // http://localhost:8080/controller/register/find/1

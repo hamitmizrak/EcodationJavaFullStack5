@@ -19,13 +19,11 @@
 
     <!--<link rel="stylesheet" th:href="@{/css/index.css}">
     <script th:src="@{/js/index.js}"></script>-->
-
     <style>
         body, table tr {
             color: white !important;
         }
     </style>
-
     <!-- dataTables CSS: paging and sorting -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.css"/>
 </head>
@@ -39,7 +37,7 @@
 <div class="container">
     <div class="row">
         <h1>Üye Kayıt</h1>
-        <form action="@{/register/create}" th:object="${create_register}" method="get">
+        <form th:action="@{/validation/create}" th:object="${key_register_validation}" method="post">
             <!--name-->
             <div class="form-group mb-3">
                 <input type="text" class="form-control" placeholder="adınız" autofocus="true"  id="name" name="name" th:field="*{name}" >
@@ -75,15 +73,6 @@
 
 <!-- dataTables JS: paging and sorting -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.js"></script>
-<script>    $(document).ready(function () {
-    $("#datalistregisterTable").DataTable({
-        'aoColumnDefs': [{
-            'bSortable': false, 'aTargets': [-1] /* 1st one, start by the right */
-        }]
-    });
-})</script>
-<!-- ends codes -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
 

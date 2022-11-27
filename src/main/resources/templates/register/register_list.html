@@ -40,11 +40,12 @@
 </head>
 
 <body class="container">
+<p th:text="${register_success}"></p>
 
 <br><br>
 <!-- start codes -->
 <h1>Register</h1>
-<a th:href="@{/controller/register/create}" class="btn btn-primary btn-sm">EKLE</a>
+<a th:href="@{/validation/create}" class="btn btn-primary btn-sm">EKLE</a>
 <!--<a th:href="@{/}" class="btn btn-secondary btn-sm">Hızlı Ekle</a>
 <a th:href="@{/}" class="btn btn-danger btn-sm">Bütün veriyi sil</a>-->
 <table class="table table-hover table-striped" id="datalistregisterTable">
@@ -59,7 +60,7 @@
         <th th:text="#{register.show}"></th>
         <th th:text="#{register.delete}"></th>
     </tr>
-    <tr th:if="${register.id>0}" th:each="register:${list_register}">
+    <tr th:if="${register.id>0}" th:each="register:${register_list}">
         <td th:text="${register.id}"></td>
         <td th:text="${register.name}"></td>
         <td th:text="${register.surname}"></td>

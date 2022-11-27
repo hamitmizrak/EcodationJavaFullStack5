@@ -8,6 +8,7 @@ import lombok.extern.log4j.Log4j2;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Data
@@ -32,6 +33,7 @@ public class RegisterDto {
     private String emailAddress;
 
     @NotEmpty(message = "{register.password.validation.constraints.NotNull.message}")
+    @Size(min=7,max=20,message = "Şifre en az 7 en fazla 20 olmalıdır.")
     private String password;
 
     private Date createdDate;
