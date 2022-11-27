@@ -30,40 +30,26 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.css"/>
 </head>
 
-<body class="container bg-dark text-white">
+<body class="container bg-dark ">
 
 <!-- start codes -->
 <h1>Register</h1>
-<a th:href="@{/controller/register/list}" class="btn btn-warning">Admin</a>
+<a th:href="@{/register/list}" class="btn btn-warning">Admin</a>
 <div class="card text-center" style="width: 15rem">
-    <img class="card-img-top" src="../../static/image/detail.jpg"  />
+    <img class="card-img-top" src="../../../../../frontend/myproject/pictures/background-gd25ecfcaa_1920.jpg"  />
     <div class="card-body">
-       <h4>Register Details</h4>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-
+       <h4  class="text-dark">Register Details</h4>
+        <p th:text="${register_find.id}" class="text-dark"></p>
+        <p th:text="${register_find.name}" class="text-dark"></p>
+        <p th:text="${register_find.surname}" class="text-dark"></p>
+        <p th:text="${register_find.password}" class="text-dark"></p>
+        <p th:text="${register_find.emailAddress}" class="text-dark"></p>
     </div>
-    <span class="text-muted"></span>
+    <span class="text-muted"  th:text="${register_find.createdDate}"></span>
 </div>
 
-
-
-<!-- dataTables JS: paging and sorting -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.js"></script>
-<script>    $(document).ready(function () {
-    $("#datalistregisterTable").DataTable({
-        'aoColumnDefs': [{
-            'bSortable': false, 'aTargets': [-1] /* 1st one, start by the right */
-        }]
-    });
-})</script>
-<!-- ends codes -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
-
 </body>
 </html>

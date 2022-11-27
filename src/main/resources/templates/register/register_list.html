@@ -34,9 +34,6 @@
 
     <link rel="stylesheet" th:href="@{/css/index.css}">
     <script th:src="@{/js/index.js}"></script>
-
-    <!-- dataTables CSS: paging and sorting -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.css"/>
 </head>
 
 <body class="container">
@@ -68,10 +65,9 @@
         <td th:text="${register.password}"></td>
         <td th:text="${register.createdDate}"></td>
         <td><i class="fa-solid fa-wrench text-primary"></i></td>
-        <td><i class="fa-solid fa-wifi text-warning"></i></td>
-        <td>
-            <i class="fa-solid fa-trash text-danger"></i>
-            <!--<button th:onclick="deleteSweetAlertRegister(\'/register/delete/'+${register.id}+'\')'"></button> -->
+        <td><a th:href="@{/register/find/{id}(id=${register.id})}" class="btn btn-warning"><i class="fa-solid fa-wifi"></i></a>  </td>
+        <td> <a class="btn btn-danger" th:onclick="'deleteSweetAlertRegister(\'/register/delete/' + ${register.id} +'\')'">
+            <i class="fa-solid fa-trash-can"></i></a>
         </td>
     </tr>
 </table>
@@ -80,47 +76,43 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.js"></script>
 <script>
-    $(document).ready(function () {
-        $("#datalistregisterTable").DataTable({
-            'aoColumnDefs': [{
-                'bSortable': false,
-                'aTargets': [-1] /* 1st one, start by the right */
-            }]
-        });
-    })
+$(document).ready(function() {
+    $("#datalistregisterTable").DataTable({
+        'aoColumnDefs': [{
+            'bSortable': false,
+            'aTargets': [-1] /* 1st one, start by the right */
+        }]
+    });
+})
 </script>
-
-
 <!-- ends codes -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <!--  Sweet Alert -->
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript">
-    function deleteSweetAlertRegister(url) {
-        swal({
-            title: "Silmek istediğinizden emin misiniz?",
-            text: "Silindikten sonra tekrar geri alınamaz.",
-            icon: "warning",
-            buttons: ["İptal", "Sil"],
-            dangerMode: true,
-        })
-            .then((willDelete) => {
-                if (willDelete) {
-                    swal("Kayıt başarılı bir şekilde silindi.", {
-                        icon: "success",
-                    });
-                    window.location.href = url;
-                } else {
-                    swal("İptal edildi.", {
-                        icon: "warning",
-                    });
-                }
-            });
-    }
+    function deleteSweetAlertRegister(url){
+    swal({
+    title: "Silmek istediğinizden emin misiniz?",
+        text: "Silindikten sonra tekrar geri alınamaz.",
+        icon: "warning",
+        buttons: ["İptal", "Sil"],
+        dangerMode: true,
+    })
+        .then((willDelete) => {
+            if (willDelete) {
+                swal("Kayıt başarılı bir şekilde silindi.", {
+                    icon: "success",
+                });
+                window.location.href = url;
+            } else {
+                swal("İptal edildi.",{
+                    icon: "warning",
+                });
+            }
+        });
+}
 </script>
 </body>
-
 </html>

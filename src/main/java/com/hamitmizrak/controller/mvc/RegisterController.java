@@ -6,6 +6,7 @@ import com.hamitmizrak.business.dto.RegisterDto;
 import com.hamitmizrak.data.entity.RegisterEntity;
 import com.hamitmizrak.data.repository.IRegisterRepository;
 import com.hamitmizrak.exception.HamitMizrakException;
+import com.hamitmizrak.exception.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.Banner;
@@ -15,10 +16,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 //Lombok
 @RequiredArgsConstructor
@@ -83,6 +81,7 @@ public class RegisterController {
         //DATABASE
         model.addAttribute("register_success","Kullanıcı kayıt edildi"+registerDto);
         log.info("Success: "+registerDto);
+        registerDto.setPassword(passwordEncodeBean.passwordEncoderMethod().encode(registerDto.getPassword()));
         RegisterEntity registerEntity=modelMapperBean.modelMapperMethod().map(registerDto,RegisterEntity.class);
         if(registerEntity!=null)
           repository.save(registerEntity);
@@ -104,9 +103,16 @@ public class RegisterController {
 
 
     // FIND
-    // http://localhost:8080/controller/register/find/1
-    @GetMapping("register/find/{id}")
-    public String validationFindRegister(@PathVariable(name="id") Long id, Model model){
+    // http://localhost:8080/register/find/1
+    // http://localhost:8080/register/find
+    @GetMapping({"register/find/{id}","register/find"})
+    public String validationFindRegister(@PathVariable(name="id",required = false) Long id, Model model){
+        Optional<RegisterEntity> findRegister= repository.findById(id);
+        if(findRegister.isPresent()){
+            model.addAttribute("register_find",findRegister.get());
+        }else{
+            model.addAttribute("register_find_not_find",id+" nolu data bulunamadı");
+        }
         return "register/register_find";
     }
 
@@ -136,6 +142,12 @@ public class RegisterController {
     // http://localhost:8080/controller/register/delete/1
     @GetMapping("register/delete/{id}")
     public String validationDeleteRegister(@PathVariable(name="id",required = false) Long id, Model model){
+        RegisterEntity registerEntityFind=repository.findById(id).orElseThrow(()->new ResourceNotFoundException(id+" id bulunamadı"));
+        if(registerEntityFind!=null){
+            repository.deleteById(id);
+        }else{
+            model.addAttribute("register_delete_not_find",id+" nolu data bulunamadı");
+        }
         return "redirect:/register/list";
     }
 
