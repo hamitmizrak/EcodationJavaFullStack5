@@ -36,31 +36,41 @@
 <h1>Register</h1>
 <button class="btn btn-danger btn-sm">Hızlı ekle</button>
 <button th:text="#{register.adduser}" class="btn btn-primary btn-sm">Kullanıcı ekle</button>
-<table class="table table-hover table-striped" id="datalistregisterTable">
-    <tr>
-        <th th:text="#{register.id}"></th>
-        <th th:text="#{register.name}"></th>
-        <th th:text="#{register.surname}"></th>
-        <th th:text="#{register.email}"></th>
-        <th th:text="#{register.password}"></th>
-        <th th:text="#{register.created_date}"></th>
-        <th th:text="#{register.update}"></th>
-        <th th:text="#{register.show}"></th>
-        <th th:text="#{register.delete}"></th>
-    </tr>
-    <tr th:each="register:${key_thymeleaf5}">
-        <td th:text="${register.id}"></td>
-        <td th:text="${register.name}"></td>
-        <td th:text="${register.surname}"></td>
-        <td th:text="${register.emailAddress}"></td>
-        <td th:text="${register.password}"></td>
-        <td th:text="${register.createdDate}"></td>
-        <td><i class="fa-solid fa-wrench text-primary"></i></td>
-        <td><i class="fa-solid fa-wifi text-warning"></i></td>
-        <td><i class="fa-solid fa-trash text-danger"></i></td>
-    </tr>
-</table>
-<!-- ends codes -->
+<div class="container">
+    <div class="row">
+        <h1>Üye Kayıt</h1>
+        <form action="@{/register/create}" th:object="${create_register}" method="get">
+            <!--name-->
+            <div class="form-group mb-3">
+                <input type="text" class="form-control" placeholder="adınız" autofocus="true"  id="name" name="name" th:field="*{name}" >
+                <span class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+            </div>
+
+            <!--surname-->
+            <div class="form-group mb-3">
+                <input type="text" class="form-control" placeholder="soyadınız"   id="surname" name="surname" th:field="*{surname}" >
+                <span class="text-danger" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></span>
+            </div>
+
+            <!--emailAddress-->
+            <div class="form-group mb-3">
+                <input type="text" class="form-control" placeholder="email "   id="emailAddress" name="emailAddress" th:field="*{emailAddress}" >
+                <span class="text-danger" th:if="${#fields.hasErrors('emailAddress')}" th:errors="*{emailAddress}"></span>
+            </div>
+
+            <!--password-->
+            <div class="form-group mb-3">
+                <input type="password" class="form-control" placeholder="şifreniz"   id="password" name="password" th:field="*{password}" >
+                <span class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Gönder</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
 
 
 <!-- dataTables JS: paging and sorting -->

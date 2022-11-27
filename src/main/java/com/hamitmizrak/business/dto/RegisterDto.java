@@ -21,17 +21,18 @@ public class RegisterDto {
 
     private Long id;
 
-    @NotEmpty(message = "adı alanı boş geçemezsiniz")
+    @NotEmpty(message = "{register.name.validation.constraints.NotNull.message}")
     private String name;
 
-    @NotEmpty(message = "soyadı alanı boş geçemezsiniz")
+    @NotEmpty(message = "{register.surname.validation.constraints.NotNull.message}")
     private String surname;
 
-    @NotEmpty(message = "email alanı boş geçemezsiniz")
+    @NotEmpty(message = "{register.email.validation.constraints.NotNull.message}")
     @Email(message = "email doğru formatta girmediniz")
     private String emailAddress;
 
-    @NotEmpty(message = "şifre alanı boş geçemezsiniz")
+    @NotEmpty(message = "{register.password.validation.constraints.NotNull.message}")
     private String password;
+
     private Date createdDate;
 }
