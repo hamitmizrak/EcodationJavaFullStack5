@@ -32,6 +32,8 @@ public class RegisterController {
     private final PasswordEncodeBean passwordEncodeBean;
     private final IRegisterRepository repository;
 
+    //FILE-WRITER / FILE-READER
+
     //Speed Data
     // http://localhost:8080/validation/speeddata
     @GetMapping("/validation/speeddata")
