@@ -19,13 +19,11 @@
 
     <!--<link rel="stylesheet" th:href="@{/css/index.css}">
     <script th:src="@{/js/index.js}"></script>-->
-
     <style>
         body, table tr {
             color: white !important;
         }
     </style>
-
     <!-- dataTables CSS: paging and sorting -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.css"/>
 </head>
@@ -34,22 +32,48 @@
 
 <!-- start codes -->
 <h1>Register</h1>
+<a th:href="@{/register/list}" class="btn btn-warning">List</a>
 <button class="btn btn-danger btn-sm">Hızlı ekle</button>
 <button th:text="#{register.adduser}" class="btn btn-primary btn-sm">Kullanıcı ekle</button>
+<div class="container">
+    <div class="row">
+        <h1>Üye Güncelle</h1>
+        <form th:action="@{/register/update/{id}}" th:object="${update_register}" method="post">
+            <!--name-->
+            <div class="form-group mb-3">
+                <input type="text" class="form-control" placeholder="adınız" autofocus="true"  id="name" name="name" th:field="*{name}" >
+                <span class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+            </div>
+
+            <!--surname-->
+            <div class="form-group mb-3">
+                <input type="text" class="form-control" placeholder="soyadınız"   id="surname" name="surname" th:field="*{surname}" >
+                <span class="text-danger" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></span>
+            </div>
+
+            <!--emailAddress-->
+            <div class="form-group mb-3">
+                <input type="text" class="form-control" placeholder="email "   id="emailAddress" name="emailAddress" th:field="*{emailAddress}" >
+                <span class="text-danger" th:if="${#fields.hasErrors('emailAddress')}" th:errors="*{emailAddress}"></span>
+            </div>
+
+            <!--password-->
+            <div class="form-group mb-3">
+                <input type="password" class="form-control" placeholder="şifreniz"   id="password" name="password" th:field="*{password}" >
+                <span class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Gönder</button>
+            </div>
+
+        </form>
+    </div>
+</div>
 
 
 
 <!-- dataTables JS: paging and sorting -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.js"></script>
-<script>    $(document).ready(function () {
-    $("#datalistregisterTable").DataTable({
-        'aoColumnDefs': [{
-            'bSortable': false, 'aTargets': [-1] /* 1st one, start by the right */
-        }]
-    });
-})</script>
-<!-- ends codes -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
 
