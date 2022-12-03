@@ -1,5 +1,5 @@
-log
-memory_persist
+/log
+/memory_persist
 
 HELP.md
 target/

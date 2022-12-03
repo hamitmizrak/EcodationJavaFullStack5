@@ -35,10 +35,13 @@
 <a th:href="@{/register/list}" class="btn btn-warning">List</a>
 <button class="btn btn-danger btn-sm">Hızlı ekle</button>
 <button th:text="#{register.adduser}" class="btn btn-primary btn-sm">Kullanıcı ekle</button>
+
+<p th:text="${register_update}"></p>
+
 <div class="container">
     <div class="row">
         <h1>Üye Güncelle</h1>
-        <form th:action="@{/register/update/{id}}" th:object="${update_register}" method="post">
+        <form th:action="@{/register/update/{id}(id=${register_update.id})}" th:object="${register_update}" method="post">
             <!--name-->
             <div class="form-group mb-3">
                 <input type="text" class="form-control" placeholder="adınız" autofocus="true"  id="name" name="name" th:field="*{name}" >
@@ -59,10 +62,16 @@
 
             <!--password-->
             <div class="form-group mb-3">
-                <input type="password" class="form-control" placeholder="şifreniz"   id="password" name="password" th:field="*{password}" >
+                <input type="password" class="form-control" placeholder="password "   id="password" name="password" th:field="*{password}" >
                 <span class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
             </div>
+
+            <div class="form-group mb-3">
+                <input type="text" class="form-control"   id="createdDate" name="createdDate" th:field="*{createdDate}" disabled >
+            </div>
+
             <div class="form-group">
+                <button type="reset" class="btn btn-danger">Temizle</button>
                 <button type="submit" class="btn btn-primary">Gönder</button>
             </div>
 
