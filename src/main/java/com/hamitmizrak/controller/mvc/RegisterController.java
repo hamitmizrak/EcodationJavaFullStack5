@@ -103,11 +103,11 @@ public class RegisterController {
 
 
 
-    // FIND
-    // http://localhost:8080/register/find/1
-    // http://localhost:8080/register/find
-    @GetMapping({"register/find/{id}","register/find"})
-    public String validationFindRegister(@PathVariable(name="id",required = false) Long id, Model model){
+    // FIND - ID   ==> 1.YOL (optional)
+    // http://localhost:8080/register/step1/id/1
+    // http://localhost:8080/register/step1/id
+    @GetMapping({"register/find/step1/{id}","register/step1/id"})
+    public String validationFindStep1Register(@PathVariable(name="id",required = false) Long id, Model model){
         Optional<RegisterEntity> findRegister= repository.findById(id);
         if(findRegister.isPresent()){
             model.addAttribute("register_find",findRegister.get());
@@ -116,6 +116,17 @@ public class RegisterController {
         }
         return "register/register_find";
     }
+
+    // FIND - ID   ==> 2.YOL (orElseThrow)
+    // http://localhost:8080/register/step2/id/1
+    // http://localhost:8080/register/step2/id
+    @GetMapping({"register/find/step2/{id}","register/step2/id"})
+    public String validationFindStep2Register(@PathVariable(name="id",required = false) Long id, Model model){
+        RegisterEntity findRegister= repository.findById(id).orElseThrow(()->new ResourceNotFoundException(id+" register is not data"));
+        return "register/register_find";
+    }
+
+
 
     //UPDATE
     // http://localhost:8080/controller/register/update/1
