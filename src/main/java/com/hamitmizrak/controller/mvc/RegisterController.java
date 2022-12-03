@@ -111,7 +111,7 @@ public class RegisterController {
         Optional<RegisterEntity> findRegister= repository.findById(id);
         if(findRegister.isPresent()){
             model.addAttribute("register_find",findRegister.get());
-        }else{
+    }else{
             model.addAttribute("register_find_not_find",id+" nolu data bulunamadı");
         }
         return "register/register_find";
@@ -123,13 +123,14 @@ public class RegisterController {
     @GetMapping({"register/find/step2/{id}","register/step2/id"})
     public String validationFindStep2Register(@PathVariable(name="id",required = false) Long id, Model model){
         RegisterEntity findRegister= repository.findById(id).orElseThrow(()->new ResourceNotFoundException(id+" register is not data"));
+        model.addAttribute("register_find",findRegister);
         return "register/register_find";
     }
 
 
 
     //UPDATE
-    // http://localhost:8080/controller/register/update/1
+    // http://localhost:8080/register/update/1
     @GetMapping("/register/update/{id}")
     public String validationUpdateGetRegister(@PathVariable(name="id") Long id,   Model model){
        //FILE
@@ -151,7 +152,7 @@ public class RegisterController {
     }
 
     //DELETE
-    // http://localhost:8080/controller/register/delete/1
+    // http://localhost:8080/register/delete/1
     @GetMapping("register/delete/{id}")
     public String validationDeleteRegister(@PathVariable(name="id",required = false) Long id, Model model){
         RegisterEntity registerEntityFind=repository.findById(id).orElseThrow(()->new ResourceNotFoundException(id+" id bulunamadı"));
