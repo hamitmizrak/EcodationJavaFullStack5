@@ -34,7 +34,7 @@ public class RegisterDto {
 
     @NotEmpty(message = "{register.password.validation.constraints.NotNull.message}")
     @Size(min=7,max=20,message = "Şifre en az 7 en fazla 20 olmalıdır.")
-    private String password;
+    private String registerPassword;
 
     private Date createdDate;
 }

@@ -62,8 +62,8 @@
 
             <!--password-->
             <div class="form-group mb-3">
-                <input type="password" class="form-control" placeholder="password "   id="password" name="password" th:field="*{password}" >
-                <span class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+                <input type="text" class="form-control"  id="registerPassword" name="registerPassword" th:field="*{registerPassword}" >
+                <span class="text-danger" th:if="${#fields.hasErrors('registerPassword')}" th:errors="*{registerPassword}"></span>
             </div>
 
             <div class="form-group mb-3">

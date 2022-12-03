@@ -31,7 +31,7 @@ public class RegisterEntity implements Serializable {
     //@Column(name="email_address",nullable = false,unique = true,length = 20)
     private String emailAddress;
 
-    private String password;
+    private String registerPassword;
 
     @Column(name="created_date")
     @Temporal(TemporalType.TIMESTAMP)

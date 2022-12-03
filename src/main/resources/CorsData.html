@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CORS JQUERY</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<p id="cors_id"></p>
+
+<script>
+    $(document).ready(function (){
+        const URL="http://localhost:8080/admin/cors";
+        $.get(URL,function(data,status){
+            console.log("API:"+data);
+            $("#cors_id").html(`<b>${data}</b>`)
+        })
+    })
+</script>
+
+</body>
+</html>

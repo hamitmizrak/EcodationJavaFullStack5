@@ -41,7 +41,7 @@ public class ControllerThymeleaf {
         registerDto.setId(1L);
         registerDto.setName("kullanıcı adı");
         registerDto.setSurname("kullanıcı soyadı");
-        registerDto.setPassword("Password");
+        registerDto.setRegisterPassword("Password");
         registerDto.setEmailAddress("Email@xyz.com");
         model.addAttribute("key_thymeleaf4", registerDto);
         return "thymeleaf4";
@@ -60,7 +60,7 @@ public class ControllerThymeleaf {
                     .surname("soyadı " + i)
                     .emailAddress("email@" + i)
                     .createdDate(new Date(System.currentTimeMillis()))
-                    .password(uuid.toString()).build());
+                    .registerPassword(uuid.toString()).build());
         }
         model.addAttribute("key_thymeleaf5", registerDtoList);
         return "thymeleaf5";
@@ -78,7 +78,7 @@ public class ControllerThymeleaf {
                 .id(id)
                 .name("kullanıcı adı44")
                 .surname(surName)
-                .password("Password")
+                .registerPassword("Password")
                 .emailAddress("Email44@xyz.com")
                 .build();
         model.addAttribute("key_thymeleaf6", registerDto);
@@ -102,7 +102,7 @@ public class ControllerThymeleaf {
                     .id(id)
                     .name("kullanıcı adı44")
                     .surname("soyadı 44")
-                    .password("Password")
+                    .registerPassword("Password")
                     .emailAddress("Email44@xyz.com")
                     .build();
             model.addAttribute("key_thymeleaf7", registerDto);
@@ -118,7 +118,7 @@ public class ControllerThymeleaf {
                 .id(id)
                 .name("kullanıcı adı44")
                 .surname("kullanıcı soyadı44")
-                .password("Password")
+                .registerPassword("Password")
                 .emailAddress("Email44@xyz.com")
                 .build();
         model.addAttribute("key_thymeleaf8", registerDto);

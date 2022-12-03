@@ -26,7 +26,7 @@ public class AdminApi {
     }
 
     // http://localhost:8080/admin/adminDto2
-    @GetMapping(value = "/adminDto1", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/adminDto2", produces = MediaType.APPLICATION_JSON_VALUE)
     public AdminDto adminDto2() {
         return AdminDto.builder().name("adı").surname("soyadı").build();
     }
@@ -85,6 +85,36 @@ public class AdminApi {
                     .build();
         }
         return ResponseEntity.ok(adminDto);
+    }
+
+
+    // http://localhost:8080/admin/adminDto6
+    // http://localhost:8080/admin/adminDto6/0
+    // http://localhost:8080/admin/adminDto6/1
+    @GetMapping({"adminDto6", "adminDto6/{id}"})
+    public ResponseEntity<?>  adminDto6(@PathVariable(name = "id", required = false) Long id) {
+        AdminDto adminDto = null;
+        if (id == null) {
+            log.error("Null değer verildi");
+            return ResponseEntity.notFound().build();
+        } else if (id == 0) {
+            log.error("Sıfır değer verildi");
+            return ResponseEntity.badRequest().build();
+        } else {
+            adminDto = AdminDto.builder()
+                    .id(id)
+                    .name("kullanıcı adı44")
+                    .surname("kullanıcı soyadı44")
+                    .build();
+        }
+        return ResponseEntity.ok(adminDto);
+    }
+
+    //CORS
+    // http://localhost:8080/admin/cors
+    @GetMapping("/cors")
+    public String cors() {
+        return "Merhabalar Ben Javadan Geldim";
     }
 
 }

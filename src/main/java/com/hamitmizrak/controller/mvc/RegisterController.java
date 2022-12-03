@@ -44,7 +44,7 @@ public class RegisterController {
             RegisterEntity registerEntity = RegisterEntity.builder()
                     .name("adı " + i)
                     .surname("soyadı " + i)
-                    .password(passwordEncodeBean.passwordEncoderMethod().encode(uuid.toString()))
+                    .registerPassword(passwordEncodeBean.passwordEncoderMethod().encode(uuid.toString()))
                     .emailAddress(uuid + "@deneme.com")
                     .build();
             repository.save(registerEntity);
@@ -92,7 +92,7 @@ public class RegisterController {
         }else{
             //DATABASE
             log.info("Success: " + registerDto);
-            registerDto.setPassword(passwordEncodeBean.passwordEncoderMethod().encode(registerDto.getPassword()));
+            //registerDto.registerPassword(passwordEncodeBean.passwordEncoderMethod().encode(registerDto.getRegisterPassword()));
             RegisterEntity registerEntity = modelMapperBean.modelMapperMethod().map(registerDto, RegisterEntity.class);
             if (registerEntity != null){
                 repository.save(registerEntity);
@@ -157,25 +157,22 @@ public class RegisterController {
         } else {
             model.addAttribute("register_update", id + " nolu data bulunamadı");
         }
-        System.out.println(findRegister.getPassword());
         return "register/register_update";
     }
 
     //NOT: Dto ile Binding Result arasına birşey girmesin
     @PostMapping("/register/update/{id}")
-    public String validationUpdatePostRegister(@PathVariable(name = "id") Long id, @Valid @ModelAttribute("register_update") RegisterDto registerDto, BindingResult bindingResult, Model model) throws HamitMizrakException {
+    public String validationUpdatePostRegister(@PathVariable(name = "id") Long id, @Valid @ModelAttribute("register_update") RegisterDto registerDto,
+                                               BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             log.error("HATA: " + bindingResult);
+            return "register/register_update";
         }
         RegisterEntity registerEntity = modelMapperBean.modelMapperMethod().map(registerDto, RegisterEntity.class);
-        if (registerEntity != null) {
-            log.info("Success: " + registerDto);
             repository.save(registerEntity);
-            model.addAttribute("register_success", "Kullanıcı kayıt edildi" + registerDto);
-            return "redirect:/register/list";
-        }
+            model.addAttribute("register_success", "Kullanıcı Güncellendi" + registerDto);
         //throw new HamitMizrakException("Kayıt eklemenedi");
-        return "register/register_update";
+        return "redirect:/register/list";
     }
 
     //DELETE
